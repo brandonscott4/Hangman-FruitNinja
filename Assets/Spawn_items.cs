@@ -8,10 +8,10 @@ public class Spawn_items : MonoBehaviour
     public float spawnTime = 1; //Spawn Time
     public GameObject apple; //Apple prefab
     public GameObject bomb; //Bomb prefab
-    public float upForce = 750; //Up force
+    public float upForce = -750; //Up force
     public float leftRightForce = 200; //Left and right force
-    public float maxX = -7; //Max x spawn position
-    public float minX = 7; //Min x spawn position
+    public float maxX = -10; //Max x spawn position
+    public float minX = 3; //Min x spawn position
 
 
     // Start is called before the first frame update
@@ -36,8 +36,9 @@ public class Spawn_items : MonoBehaviour
         }
         //Spawn prefab add randomc position
         GameObject go = Instantiate(prefab, new Vector3(Random.Range(minX
-        , maxX + 1), transform.position.y, 0f), Quaternion.Euler(0, 0, Random.Range(-
-        90F, 90F))) as GameObject;
+        , maxX + 1), transform.position.y+14,  0f), Quaternion.Euler(0, 0, Random.Range(-90F, 90F))) as GameObject;
+
+       transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90f);
 
         bool isAppleGravity = go.name == "AppleGravity(Clone)";
         //If x position is over 0 go left
@@ -45,12 +46,11 @@ public class Spawn_items : MonoBehaviour
         {   
             if(isAppleGravity)
             {
-                go.GetComponent<gravity>().applyForce(new Vector3(-leftRightForce, upForce, 0));
+                go.GetComponent<gravity>().applyForce(new Vector3( upForce, 0));
 
             } else
             {
-                go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-
-                leftRightForce, upForce));
+                go.GetComponent<Rigidbody2D>().AddForce(new Vector2( upForce,0));
             }
         }
         //Else go right
@@ -58,10 +58,10 @@ public class Spawn_items : MonoBehaviour
         {
             if (isAppleGravity)
             {
-                go.GetComponent<gravity>().applyForce(new Vector3(leftRightForce, upForce, 0));
+                go.GetComponent<gravity>().applyForce(new Vector3(upForce, 0));
             } else
             {
-                go.GetComponent<Rigidbody2D>().AddForce(new Vector2(leftRightForce, upForce));
+                go.GetComponent<Rigidbody2D>().AddForce(new Vector2(upForce,0));
             }
             
         }

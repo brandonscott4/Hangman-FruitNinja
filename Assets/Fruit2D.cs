@@ -26,6 +26,7 @@ public class Fruit2D : MonoBehaviour
         {
             //Destroy
             Destroy(gameObject);
+           // Experience_Script.xpValue++; //adds to the xp when objects are destroyed
         }
         //If we cant die and are on the screen
         //for the fruit to appear on screen the first time
@@ -41,9 +42,10 @@ public class Fruit2D : MonoBehaviour
  
         if(gameObject.tag == "Fruit")
         {
+
+            //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
             Instantiate(splat, transform.position, transform.rotation);
         }
-
         Destroy(gameObject);
     }
 }

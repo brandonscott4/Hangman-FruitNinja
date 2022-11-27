@@ -57,6 +57,7 @@ public class Ninja_Player : MonoBehaviour
         if (other.tag == "Fruit")
         {
             other.GetComponent<Fruit2D>().Hit();
+            Experience_Script.xpValue++;
             score++;
             Debug.Log(score);
         }

@@ -31,9 +31,10 @@ public class gravity : MonoBehaviour
 
     private void updatePos()
     {
-        velocity = velocity + acceleration;
+        velocity =  acceleration;
         transform.position += velocity * Time.deltaTime;
-        acceleration = new Vector3(0.0f, 0.0f); //reset to zero as acceleration is constant
+        acceleration = new Vector3(0.0f, -8f); //made the velocity constant 
+        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90f);
     }
 
     // Update is called once per frame
