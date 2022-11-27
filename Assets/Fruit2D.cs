@@ -37,7 +37,7 @@ public class Fruit2D : MonoBehaviour
         }
     }
 
-    public void Hit()
+    public bool Hit()
     {
  
         if(gameObject.tag == "Fruit")
@@ -47,5 +47,7 @@ public class Fruit2D : MonoBehaviour
             Instantiate(splat, transform.position, transform.rotation);
         }
         Destroy(gameObject);
+        return true;
+
     }
 }
