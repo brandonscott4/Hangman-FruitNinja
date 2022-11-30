@@ -14,6 +14,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     char[] letters;
     public RandomWordGeneratorScript rngScript;
     int count =0;
+    int remain = 0; //remaining letters left 
     void Start()
     {
         // gameObject.AddComponent<Fruit2D>().Hit();
@@ -82,8 +83,11 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
         if (letters.Length > count)
         {
-            Debug.Log(letters[count].ToString());
+            Debug.Log("you selected +"+ letters[count].ToString() + "you have " + (letters.Length-1) + " letters remaining ");
             count++;
+            
+
+            
         }
 
 
