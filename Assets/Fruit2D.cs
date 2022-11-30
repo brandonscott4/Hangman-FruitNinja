@@ -8,12 +8,14 @@ public class Fruit2D : MonoBehaviour
     private bool canBeDead; //If we can destroy the object
     private Vector3 screen; //Position on the screen
     public GameObject splat;
+    private char letter;
+    private GameObject rngObject;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rngObject = GameObject.Find("rngWordObject");
     }
 
     // Update is called once per frame
@@ -45,9 +47,16 @@ public class Fruit2D : MonoBehaviour
 
             //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
             Instantiate(splat, transform.position, transform.rotation);
+            Debug.Log(letter + " - " + rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInRemainingLetters(letter));
         }
         Destroy(gameObject);
         return true;
 
+    }
+
+    //can this be in start method?
+    public void setLetter(char c)
+    {
+        letter = c;
     }
 }

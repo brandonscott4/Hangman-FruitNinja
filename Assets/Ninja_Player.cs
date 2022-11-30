@@ -7,12 +7,13 @@ public class Ninja_Player : MonoBehaviour
 
     private Vector3 pos; //Position
     public int score = 0;
-    public  RandomWordGeneratorScript rngScript;
+    private GameObject rngObject;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        rngObject = GameObject.Find("rngWordObject");
         //Set screen orientation to landscape
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         //Set sleep timeout to never
@@ -58,11 +59,11 @@ public class Ninja_Player : MonoBehaviour
         if (other.tag == "Fruit")
         {
             other.GetComponent<Fruit2D>().Hit();
-            if (other.tag == "Fruit")
-            {
-                rngScript.test();
-
-            }
+            //if (other.tag == "Fruit")
+            //{
+            //    rngScript.test();
+            //
+            //}
 
         Experience_Script.xpValue++;
             score++;
