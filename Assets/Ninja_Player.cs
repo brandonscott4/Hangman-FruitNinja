@@ -7,6 +7,7 @@ public class Ninja_Player : MonoBehaviour
 
     private Vector3 pos; //Position
     public int score = 0;
+    public  RandomWordGeneratorScript rngScript;
 
 
     // Start is called before the first frame update
@@ -50,16 +51,24 @@ public class Ninja_Player : MonoBehaviour
             transform.position = new Vector3(pos.x, pos.y, 3);
         }
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.tag == "Fruit")
         {
             other.GetComponent<Fruit2D>().Hit();
-            Experience_Script.xpValue++;
+            if (other.tag == "Fruit")
+            {
+                rngScript.test();
+
+            }
+
+        Experience_Script.xpValue++;
             score++;
             Debug.Log(score);
+
+
         }
 
         if (other.tag == "Enemy")

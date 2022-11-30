@@ -12,6 +12,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     public TextMeshProUGUI remainingLetters;
     public string randomWord;
     char[] letters;
+    public RandomWordGeneratorScript rngScript;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         // remainingLetters.text = "You have " + 10 + "remaining letters";
 
 
-        char[] letters = randomWord.ToCharArray(); // ['h', 'e', 'l', 'l', 'o']
+        letters = randomWord.ToCharArray(0,randomWord.Length); // ['h', 'e', 'l', 'l', 'o']
 
 
 
@@ -68,20 +69,18 @@ public class RandomWordGeneratorScript : MonoBehaviour
         return letters;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void test()
+    
     {
-        //Debug.Log(letters[1]);
 
-        if (other.tag == "Fruit")
-        {
             foreach (char c in letters)
             {
-
+            
                 Debug.Log(c.ToString());
 
-
+            
             }
         }
     }
-}
+
 
