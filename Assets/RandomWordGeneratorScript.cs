@@ -73,7 +73,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     public void test()
     
     {
-
+        int remian = letters[count];
         //foreach (char c in letters)
 
 
@@ -83,9 +83,12 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
         if (letters.Length > count)
         {
-            Debug.Log("you selected +"+ letters[count].ToString() + "you have " + (letters.Length-1) + " letters remaining ");
+            // letters.Length--;
+
+            int x = letters.Length-1;
+            Debug.Log("you selected "+ letters[count].ToString() +" " +"you have " + x +" "+ " letters remaining ");
             count++;
-            
+             x--;
 
             
         }
