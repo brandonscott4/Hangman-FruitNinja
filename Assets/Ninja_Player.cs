@@ -66,7 +66,7 @@ public class Ninja_Player : MonoBehaviour
 
         Experience_Script.xpValue++;
             score++;
-            Debug.Log(score);
+           //Debug.Log(score);
 
 
         }
@@ -75,7 +75,7 @@ public class Ninja_Player : MonoBehaviour
         {
             other.GetComponent<Fruit2D>().Hit();
             score-=2;
-            Debug.Log(score);
+           // Debug.Log(score);
         }
     }
 }

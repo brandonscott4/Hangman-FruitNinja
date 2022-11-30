@@ -13,7 +13,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     public string randomWord;
     char[] letters;
     public RandomWordGeneratorScript rngScript;
-
+    int count =0;
     void Start()
     {
         // gameObject.AddComponent<Fruit2D>().Hit();
@@ -73,14 +73,23 @@ public class RandomWordGeneratorScript : MonoBehaviour
     
     {
 
-            foreach (char c in letters)
-            {
-            
-                Debug.Log(c.ToString());
+        //foreach (char c in letters)
 
-            
-            }
+
+        //  Debug.Log(c.ToString());
+
+
+
+        if (letters.Length > count)
+        {
+            Debug.Log(letters[count].ToString());
+            count++;
         }
+
+
     }
+        }
+
+    
 
 
