@@ -7,13 +7,11 @@ public class Ninja_Player : MonoBehaviour
 
     private Vector3 pos; //Position
     public int score = 0;
-    private GameObject rngObject;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rngObject = GameObject.Find("rngWordObject");
         //Set screen orientation to landscape
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         //Set sleep timeout to never

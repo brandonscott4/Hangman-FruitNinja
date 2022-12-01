@@ -16,6 +16,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     //public RandomWordGeneratorScript rngScript;
     int count =0;
     //int remain = 0; //remaining letters left
+
     void Awake()
     {
         // gameObject.AddComponent<Fruit2D>().Hit();
@@ -59,6 +60,10 @@ public class RandomWordGeneratorScript : MonoBehaviour
         // }
 
         //string  randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
+        if(remaining_letters.Count == 0)
+        {
+            Debug.Log("Win!");
+        }
 
 
 
@@ -136,20 +141,26 @@ public class RandomWordGeneratorScript : MonoBehaviour
     }
 
     //adds a letter to other letters list, if that letter is not to be guessed still
-    public void addToOtherLetters(char c)
+    public void handleCorrectGuess(char c)
     {
+        removeLetterFromRemaining(c);
         //check as could be multiple occurences of a letter
-        if (!remaining_letters.Contains(c))
-        {
-            other_letters.Add(c);
-        }
+        ///if (!remaining_letters.Contains(c))
+        //{
+            //maybe we dont want to add correct letters to other letters list
+        //    other_letters.Add(c);
+            
+        //}
             
     }
 
-    public void removeLetterFromRemaning(char c)
+    public void removeLetterFromRemaining(char c)
     {
         // not sure whether to use index or char cos there could be more than one occurence
+        remaining_letters.Remove(c);
     }
+    
+
 }
 
     
