@@ -94,6 +94,11 @@ public class RandomWordGeneratorScript : MonoBehaviour
         return remaining_letters.Contains(c);
     }
 
+    public bool isLetterInOtherLetters(char c)
+    {
+        return other_letters.Contains(c);
+    }
+
     public string getRandomWord()
     {
         return randomWord;
@@ -143,22 +148,22 @@ public class RandomWordGeneratorScript : MonoBehaviour
     //adds a letter to other letters list, if that letter is not to be guessed still
     public void handleCorrectGuess(char c)
     {
-        removeLetterFromRemaining(c);
+        remaining_letters.Remove(c);
         //check as could be multiple occurences of a letter
         ///if (!remaining_letters.Contains(c))
         //{
-            //maybe we dont want to add correct letters to other letters list
+        //maybe we dont want to add correct letters to other letters list
         //    other_letters.Add(c);
-            
+
         //}
-            
+
     }
 
-    public void removeLetterFromRemaining(char c)
+    public void handleIncorrectGuess(char c)
     {
-        // not sure whether to use index or char cos there could be more than one occurence
-        remaining_letters.Remove(c);
+        other_letters.Remove(c);
     }
+
     
 
 }

@@ -47,11 +47,16 @@ public class Fruit2D : MonoBehaviour
 
             //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
             Instantiate(splat, transform.position, transform.rotation);
-            bool check = rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInRemainingLetters(letter);
-            Debug.Log(letter + " - " + check);
-            if (check)
+
+            bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInRemainingLetters(letter);
+            Debug.Log(letter + " - " + isCorrect);
+            if (isCorrect)
             {
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(letter);
+
+            } else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
+            {
+                rngObject.GetComponent<RandomWordGeneratorScript>().handleIncorrectGuess(letter);
             }
 
             //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
