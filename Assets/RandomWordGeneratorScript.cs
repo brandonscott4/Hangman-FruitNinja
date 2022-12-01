@@ -12,6 +12,8 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private string randomWord;
     private List<char> remaining_letters;
     private List<char> other_letters;
+    private List<char> guess = new List<char>();
+    private List<char> guessProgress;
     //maybe dont need this as can create an instance in another script
     //public RandomWordGeneratorScript rngScript;
     int count =0;
@@ -21,11 +23,11 @@ public class RandomWordGeneratorScript : MonoBehaviour
     {
         // gameObject.AddComponent<Fruit2D>().Hit();
         randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
-        Debug.Log(randomWord);
-
-        char[] char_letters = randomWord.ToCharArray(0,randomWord.Length); // ['h', 'e', 'l', 'l', 'o']
+        setGuess();
+        char[] splitRandomWord = randomWord.ToCharArray(0,randomWord.Length); // ['h', 'e', 'l', 'l', 'o']
         // letters left to guess, as a List so letters can be removed
-        remaining_letters = char_letters.ToList();
+        remaining_letters = splitRandomWord.ToList();
+        guessProgress = splitRandomWord.ToList();
 
         other_letters = setOtherLetters();
 
@@ -104,6 +106,11 @@ public class RandomWordGeneratorScript : MonoBehaviour
         return randomWord;
     }
 
+    public List<char> getGuess()
+    {
+        return guess;
+    }
+
 
     public void test()
     
@@ -131,6 +138,15 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
     }
 
+    //sets guess list as all _ initially
+    private void setGuess()
+    {
+        for (int i = 0; i < randomWord.Length; i++)
+        {
+            guess.Add('_');
+        }
+    }
+
     //sets list that contains all letters that arent in the current word
     public List<char> setOtherLetters()
     {
@@ -148,6 +164,10 @@ public class RandomWordGeneratorScript : MonoBehaviour
     //adds a letter to other letters list, if that letter is not to be guessed still
     public void handleCorrectGuess(char c)
     {
+        int indexOfLetter = guessProgress.IndexOf(c);
+        guess[indexOfLetter] = c;
+        //Debug.Log(guess[0] + " " + guess[1] + " " + guess[2] + " " + guess[3]);
+        guessProgress[indexOfLetter] = '_';
         remaining_letters.Remove(c);
         //check as could be multiple occurences of a letter
         ///if (!remaining_letters.Contains(c))
@@ -162,6 +182,8 @@ public class RandomWordGeneratorScript : MonoBehaviour
     public void handleIncorrectGuess(char c)
     {
         other_letters.Remove(c);
+
+
     }
 
     
