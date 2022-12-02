@@ -10,12 +10,15 @@ public class Fruit2D : MonoBehaviour
     public GameObject splat;
     private char letter;
     private GameObject rngObject;
+    private GameObject DynamicHangman;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rngObject = GameObject.Find("rngWordObject");
+        DynamicHangman = GameObject.Find("hangmanList");
+
     }
 
     // Update is called once per frame
@@ -56,6 +59,8 @@ public class Fruit2D : MonoBehaviour
 
             } else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
             {
+                DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
+
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleIncorrectGuess(letter);
             }
 

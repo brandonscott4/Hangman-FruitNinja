@@ -14,13 +14,19 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private List<char> other_letters;
     private List<char> guess = new List<char>();
     private List<char> guessProgress;
+   // public Sprite hangman7;
+
     //maybe dont need this as can create an instance in another script
     //public RandomWordGeneratorScript rngScript;
     int count =0;
     //int remain = 0; //remaining letters left
 
+   // Sprite sprite1 = Resources.Load<Sprite>("HangmanSprite/hangman1");
+
+
     void Awake()
     {
+
         // gameObject.AddComponent<Fruit2D>().Hit();
         randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
         setGuess();
@@ -30,6 +36,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         guessProgress = splitRandomWord.ToList();
 
         other_letters = setOtherLetters();
+        //Sprite sprite1 = Resources.Load("HangmanSprite/hangman1") ;
 
 
 
@@ -66,7 +73,11 @@ public class RandomWordGeneratorScript : MonoBehaviour
         {
             Debug.Log("Win!");
         }
+       // if(Input.GetKeyDown(KeyCode.A))
+        //GetComponent<SpriteRenderer>().sprite = hangman1;
 
+        //if (Input.GetKeyDown(KeyCode.D))
+          //  GetComponent<SpriteRenderer>().sprite = hangman7;
 
 
     }
@@ -169,6 +180,9 @@ public class RandomWordGeneratorScript : MonoBehaviour
         //Debug.Log(guess[0] + " " + guess[1] + " " + guess[2] + " " + guess[3]);
         guessProgress[indexOfLetter] = '_';
         remaining_letters.Remove(c);
+
+       // GetComponent<SpriteRenderer>().sprite = HangmanSprites[i];
+
         //check as could be multiple occurences of a letter
         ///if (!remaining_letters.Contains(c))
         //{
