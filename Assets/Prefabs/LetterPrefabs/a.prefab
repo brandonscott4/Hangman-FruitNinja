@@ -98,3 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splat: {fileID: 0}
+  correctParticles: {fileID: 0}
+  incorrectParticles: {fileID: 0}

@@ -8,6 +8,9 @@ public class Fruit2D : MonoBehaviour
     private bool canBeDead; //If we can destroy the object
     private Vector3 screen; //Position on the screen
     public GameObject splat;
+    public ParticleSystem correctParticles;
+    public ParticleSystem incorrectParticles;
+    private float particleDuration = 1.0f;
     private char letter;
     private GameObject rngObject;
     private GameObject DynamicHangman;
@@ -56,12 +59,14 @@ public class Fruit2D : MonoBehaviour
             if (isCorrect)
             {
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(letter);
+                showCorrectParticles();
 
             } else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
             {
                 DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
 
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleIncorrectGuess(letter);
+                showIncorrectParticles();
             }
 
             //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
@@ -77,5 +82,17 @@ public class Fruit2D : MonoBehaviour
     public void setLetter(char c)
     {
         letter = c;
+    }
+
+    private void showCorrectParticles()
+    {
+        ParticleSystem particleInstance = Instantiate(correctParticles, transform.position, transform.rotation);
+        Destroy(particleInstance, particleDuration);
+    }
+
+    private void showIncorrectParticles()
+    {
+        ParticleSystem particleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);
+        Destroy(particleInstance, particleDuration);
     }
 }

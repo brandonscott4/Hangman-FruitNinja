@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splat: {fileID: 1290939368609502728, guid: 204194f11c163294cbc25ff384bc1e58, type: 3}
+  correctParticles: {fileID: 414593028152376932, guid: dc70774aad2a27c49a479bafc817495e, type: 3}
+  incorrectParticles: {fileID: 3017658254304281623, guid: b83e1d20c87448b48a826207108b1fb0, type: 3}
 --- !u!50 &2873936882201188576
 Rigidbody2D:
   serializedVersion: 4
