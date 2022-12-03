@@ -14,14 +14,12 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private List<char> other_letters;
     private List<char> guess = new List<char>();
     private List<char> guessProgress;
-   // public Sprite hangman7;
 
     //maybe dont need this as can create an instance in another script
     //public RandomWordGeneratorScript rngScript;
     int count =0;
     //int remain = 0; //remaining letters left
 
-   // Sprite sprite1 = Resources.Load<Sprite>("HangmanSprite/hangman1");
 
 
     void Awake()
@@ -69,7 +67,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         // }
 
         //string  randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
-        if(remaining_letters.Count == 0)
+        if(remaining_letters.Count == 0) 
         {
             Debug.Log("Win!");
         }

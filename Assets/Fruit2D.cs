@@ -52,7 +52,7 @@ public class Fruit2D : MonoBehaviour
         {
 
             //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
-            Instantiate(splat, transform.position, transform.rotation);
+       //     Instantiate(splat, transform.position, transform.rotation);
 
             bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInRemainingLetters(letter);
             Debug.Log(letter + " - " + isCorrect);
