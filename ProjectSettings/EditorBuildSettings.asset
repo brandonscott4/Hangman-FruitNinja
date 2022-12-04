@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Menu.unity
+    path: Assets/Menus/MainMenu.unity
     guid: 36ce8328f6eae6746a7efc849e1ed9a9
   - enabled: 1
     path: Assets/NinjaGame.unity

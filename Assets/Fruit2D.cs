@@ -60,17 +60,22 @@ public class Fruit2D : MonoBehaviour
             {
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(letter);
                 showCorrectParticles();
+                Experience_Script.xpValue++;
 
-            } else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
+
+            }
+            else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
             {
                 DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
 
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleIncorrectGuess(letter);
                 showIncorrectParticles();
+                Experience_Script.xpValue--;
+
             }
 
             //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
-            
+
 
         }
         Destroy(gameObject);

@@ -10,13 +10,17 @@ public class DynamicHangman : MonoBehaviour
     // public Texture2D[] hangmen;
     public Sprite[] HangmanSprites;
     int n = 0;
-
+    //private GameObject brgObject;
+    public GameManagerScript gameManager;
+    private bool isDead;
     private GameObject Fruit2D;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = hangman1;
         LoadSprites();
+
+      //  brgObject = GameObject.Find("Background");
 
     }
     public void LoadSprites()
@@ -44,10 +48,20 @@ public class DynamicHangman : MonoBehaviour
     {
         {
             n++;
+            Debug.Log("incrementor "+ n);
+ 
+           
+                GetComponent<SpriteRenderer>().sprite = HangmanSprites[n];
+             //   Debug.Log("test");
 
-            GetComponent<SpriteRenderer>().sprite = HangmanSprites[n];
-
-
+                // if (HangmanSprites[6])
+            
+            if (n == 6 && !isDead)
+            {
+                isDead = true; //gameover function only called once
+                gameManager.GameOver();
+                Debug.Log("bye");
+            }
         }
 
 

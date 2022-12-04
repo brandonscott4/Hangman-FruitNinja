@@ -21,4 +21,5 @@ public class Experience_Script : MonoBehaviour
     {
         scoreText.text = "Experience points:" + xpValue*50;
     }
+
 }
