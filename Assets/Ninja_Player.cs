@@ -73,6 +73,7 @@ public class Ninja_Player : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<Fruit2D>().Hit();
+
             score-=2;
            // Debug.Log(score);
         }

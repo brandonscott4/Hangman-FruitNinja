@@ -13,7 +13,7 @@ public class MainMenuScript : MonoBehaviour
     }
     public void Shop()
     {
-        
+        SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {

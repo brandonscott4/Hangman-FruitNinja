@@ -6,6 +6,7 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject Spawner;
+    public GameObject gameWonUI;
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +19,23 @@ public class GameManagerScript : MonoBehaviour
     {
 
     }
-    public void GameOver()
+    public void GameWon()
     {
 
-        //
 
 
-        //  if (GetComponent<SpriteRenderer>().sprite = HangmanSprites[7])
-        //  {
+        gameWonUI.SetActive(true);
+        Spawner.SetActive(false);//disables the spawner
+        Debug.Log("You Won");
+    }
+    public void GameOver()
+    {
 
         gameOverUI.SetActive(true);
         Spawner.SetActive(false);//disables the spawner
         Debug.Log("You Lose");
-        // }
     }
+
     public void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //gets the current scene and resets it 
     }
@@ -39,4 +43,5 @@ public class GameManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(0); //gets the current scene and resets it 
     }
+   
 }

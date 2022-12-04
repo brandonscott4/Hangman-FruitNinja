@@ -14,6 +14,9 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private List<char> other_letters;
     private List<char> guess = new List<char>();
     private List<char> guessProgress;
+    private bool isFinished; //checks if the game is finished or not 
+    public GameManagerScript gameManager;
+
 
     //maybe dont need this as can create an instance in another script
     //public RandomWordGeneratorScript rngScript;
@@ -67,20 +70,22 @@ public class RandomWordGeneratorScript : MonoBehaviour
         // }
 
         //string  randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
-        if(remaining_letters.Count == 0) 
+        if (remaining_letters.Count == 0 && !isFinished)
         {
-            Debug.Log("Win!");
+            isFinished = true; //gameover function only called once
+            gameManager.GameWon();
+            Debug.Log("hi");
+
+            // if(Input.GetKeyDown(KeyCode.A))
+            //GetComponent<SpriteRenderer>().sprite = hangman1;
+
+            //if (Input.GetKeyDown(KeyCode.D))
+            //  GetComponent<SpriteRenderer>().sprite = hangman7;
+
         }
-       // if(Input.GetKeyDown(KeyCode.A))
-        //GetComponent<SpriteRenderer>().sprite = hangman1;
+            }
 
-        //if (Input.GetKeyDown(KeyCode.D))
-          //  GetComponent<SpriteRenderer>().sprite = hangman7;
-
-
-    }
-
-    public List<char> getRemainingLetters()
+        public List<char> getRemainingLetters()
     {
         return remaining_letters;
     }
