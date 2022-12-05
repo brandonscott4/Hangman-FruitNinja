@@ -1062,7 +1062,6 @@ GameObject:
   - component: {fileID: 558443373}
   - component: {fileID: 558443376}
   - component: {fileID: 558443375}
-  - component: {fileID: 558443374}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -1094,19 +1093,6 @@ RectTransform:
   m_AnchoredPosition: {x: -7.9554, y: -0.0323}
   m_SizeDelta: {x: 15.9932995, y: -0.018399239}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &558443374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558443372}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5315f7d3adb928447bbd99c30c836a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BrgGROUND: {fileID: 0}
 --- !u!114 &558443375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,6 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 987829982}
+  gameOverUI: {fileID: 987829979}
 --- !u!114 &987829982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,6 +2334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1152788472}
+  gameOverUI: {fileID: 558443372}
 --- !u!114 &1152788472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,6 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1356126629}
+  gameOverUI: {fileID: 558443372}
 --- !u!114 &1356126629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2830,6 @@ GameObject:
   - component: {fileID: 1751084429}
   - component: {fileID: 1751084432}
   - component: {fileID: 1751084431}
-  - component: {fileID: 1751084430}
   m_Layer: 5
   m_Name: 'GameWonScreen '
   m_TagString: Untagged
@@ -2873,19 +2861,6 @@ RectTransform:
   m_AnchoredPosition: {x: -7.9554, y: -0.0323}
   m_SizeDelta: {x: 15.9932995, y: -0.018399239}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1751084430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751084428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5315f7d3adb928447bbd99c30c836a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BrgGROUND: {fileID: 0}
 --- !u!114 &1751084431
 MonoBehaviour:
   m_ObjectHideFlags: 0
