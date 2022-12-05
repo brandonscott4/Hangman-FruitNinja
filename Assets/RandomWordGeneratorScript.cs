@@ -85,7 +85,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         }
             }
 
-        public List<char> getRemainingLetters()
+    public List<char> getRemainingLetters()
     {
         return remaining_letters;
     }
