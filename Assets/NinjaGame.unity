@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 358332241}
   - component: {fileID: 358332244}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: invincibilityBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,6 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0af6a07dd789b140a6c9550ceffe9d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quantityText: {fileID: 748815257}
 --- !u!1 &427554996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3262,7 +3263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3353,7 +3354,7 @@ GameObject:
   - component: {fileID: 1601845135}
   - component: {fileID: 1601845134}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: freeLetterBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3392,6 +3393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467c8b258968f404fb5e0720d3b7a0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quantityText: {fileID: 1601612919}
 --- !u!114 &1601845135
 MonoBehaviour:
   m_ObjectHideFlags: 0
