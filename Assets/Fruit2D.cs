@@ -70,6 +70,8 @@ public class Fruit2D : MonoBehaviour
             }
             else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
             {
+                SoundManagerScript.PlaySound("sliceLose");
+
                 if (!ninjaPlayer.GetComponent<Ninja_Player>().isInvincible)
                 {
                     DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
