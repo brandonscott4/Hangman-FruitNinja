@@ -60,9 +60,11 @@ public class Fruit2D : MonoBehaviour
             Debug.Log(letter + " - " + isCorrect);
             if (isCorrect)
             {
+                SoundManagerScript.PlaySound("swordSlice");
+
                 rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(letter);
                 showCorrectParticles();
-                Experience_Script.xpValue++;
+               // Experience_Script.xpValue++;
 
 
             }

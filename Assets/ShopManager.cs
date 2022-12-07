@@ -58,6 +58,8 @@ public class ShopManager : MonoBehaviour
 
         if (Experience_Script.xpValue>= shopContents[2, purchaseButton.GetComponent<ButtonInfo>().ItemID] ) //
         {
+            SoundManagerScript.PlaySound("cashRegister");
+
             int itemId = purchaseButton.GetComponent<ButtonInfo>().ItemID;
             Experience_Script.xpValue -= shopContents[2, itemId]; //calculate new price 
 

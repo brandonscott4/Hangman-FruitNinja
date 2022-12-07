@@ -23,15 +23,19 @@ public class GameManagerScript : MonoBehaviour
     {
 
 
+        SoundManagerScript.PlaySound("game won2");
 
         gameWonUI.SetActive(true);
+
         Spawner.SetActive(false);//disables the spawner
         Debug.Log("You Won");
     }
     public void GameOver()
     {
 
+        SoundManagerScript.PlaySound("gameOver");
         gameOverUI.SetActive(true);
+
         Spawner.SetActive(false);//disables the spawner
         Debug.Log("You Lose");
     }

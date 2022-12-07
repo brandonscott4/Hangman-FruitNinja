@@ -52,6 +52,7 @@ public class DynamicHangman : MonoBehaviour
  
            
                 GetComponent<SpriteRenderer>().sprite = HangmanSprites[n];
+            SoundManagerScript.PlaySound("hangmanbeep");
              //   Debug.Log("test");
 
                 // if (HangmanSprites[6])
