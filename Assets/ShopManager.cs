@@ -56,7 +56,7 @@ public class ShopManager : MonoBehaviour
         int var = Random.Range(5, 25); //random number,when you purchase the price will increase like an economy
 
 
-        if (Experience_Script.xpValue>= shopContents[2, purchaseButton.GetComponent<ButtonInfo>().ItemID] ) //
+        if (Experience_Script.xpValue >= shopContents[2, purchaseButton.GetComponent<ButtonInfo>().ItemID]) //
         {
             SoundManagerScript.PlaySound("cashRegister");
 
@@ -68,7 +68,11 @@ public class ShopManager : MonoBehaviour
 
             purchaseButton.GetComponent<ButtonInfo>().NewPriceText.text = "Price:" + shopContents[2, itemId].ToString() + " XP"; //new price onscreen
             purchaseButton.GetComponent<ButtonInfo>().QuantityText.text = "You have:" + shopContents[3, itemId].ToString() + " Items"; //new quantity onscreen , error appears here when buttoninfo script(QuantityText) is static
-           
+
+
+        }
+        else {
+            SoundManagerScript.PlaySound("nocash");
 
         }
     }
