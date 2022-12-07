@@ -9,20 +9,20 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
 
-    public static int[,] shopContents = new int[6,6];
+    public static int[,] shopContents = new int[4,6];
     public TextMeshProUGUI ExperiencePointsScore;
+    public GameObject jsonManagerObj;
    
 
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log("Called Start for shopManager");
-        //Debug.Log(shopContents[3, 1]);
-
+        jsonManagerObj = GameObject.Find("jsonManagerObj");
         //if shopContents has just been initialised
         if (shopContents[1, 1] == 0)
         {
-            Debug.Log("Run inital array mapping");
+            //jsonManagerObj.GetComponent<jsonManager>().loadFromJSON();
+            //Debug.Log(shopContents[1, 1]);
             //ID'S
             shopContents[1, 1] = 1;
             shopContents[1, 2] = 2;
