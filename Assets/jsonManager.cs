@@ -27,13 +27,12 @@ public class jsonManager : MonoBehaviour
         File.WriteAllText(Application.dataPath + "/saveData.json", json);
     }
 
-    public void loadFromJSON()
+    public int[] loadFromJSON()
     {
         string json = File.ReadAllText(Application.dataPath + "/saveData.json");
         saveData data = JsonUtility.FromJson<saveData>(json);
-       // Debug.Log(data.shopContentsData[1,1]);
-        ShopManager.shopContents = data.shopContentsData;
         Experience_Script.xpValue = data.xpData;
+        return data.shopContentsData;
 
 
     }

@@ -17,20 +17,20 @@ public class extraLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        quantityText.text = ShopManager.shopContents[3, 3].ToString();
+        quantityText.text = ShopManager.shopContents[3].ToString();
     }
 
     public void triggerExtraLife()
     {
-        if (ShopManager.shopContents[3, 3] > 0)
+        if (ShopManager.shopContents[3] > 0)
         {
 
             if (dynamicHangmanObj.GetComponent<DynamicHangman>().decrementor())
             {
                 //update the text quanity of this power up
                 //call to decrement the shop quantity
-                ShopManager.shopContents[3, 3]--;
-                quantityText.text = ShopManager.shopContents[3, 3].ToString();
+                ShopManager.shopContents[3]--;
+                quantityText.text = ShopManager.shopContents[3].ToString();
             }
             
         }

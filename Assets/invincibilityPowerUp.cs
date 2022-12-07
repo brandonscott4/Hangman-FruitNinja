@@ -21,12 +21,12 @@ public class invincibilityPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        quantityText.text = ShopManager.shopContents[3, 1].ToString();
+        quantityText.text = ShopManager.shopContents[1].ToString();
     }
 
     public void triggerInvincible()
     {
-        if (!IsInvoking("resetIsInvincible") && ShopManager.shopContents[3, 1] > 0)
+        if (!IsInvoking("resetIsInvincible") && ShopManager.shopContents[1] > 0)
         {
 
             ninjaPlayer.GetComponent<Ninja_Player>().isInvincible = true;
@@ -34,9 +34,9 @@ public class invincibilityPowerUp : MonoBehaviour
             Invoke("resetIsInvincible", 5.0f);
             //update the text quanity of this power up
             //call to decrement the shop quantity
-            ShopManager.shopContents[3, 1]--;
+            ShopManager.shopContents[1]--;
             //Debug.Log(ShopManager.shopContents[3, 1].ToString());
-            quantityText.text = ShopManager.shopContents[3, 1].ToString();
+            quantityText.text = ShopManager.shopContents[1].ToString();
 
         }
     }

@@ -20,19 +20,19 @@ public class freeLetterPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        quantityText.text = ShopManager.shopContents[3, 2].ToString();
+        quantityText.text = ShopManager.shopContents[2].ToString();
     }
 
     public void triggerFreeLetter()
     {
-        if(ShopManager.shopContents[3, 2] > 0)
+        if(ShopManager.shopContents[2] > 0)
         {
             char freeLetter = rngObject.GetComponent<RandomWordGeneratorScript>().getRandomRemainingLetter();
             rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(freeLetter);
             //update the text quanity of this power up
             //call to decrement the shop quantity
-            ShopManager.shopContents[3, 2]--;
-            quantityText.text = ShopManager.shopContents[3, 2].ToString();
+            ShopManager.shopContents[2]--;
+            quantityText.text = ShopManager.shopContents[2].ToString();
         }
 
     }

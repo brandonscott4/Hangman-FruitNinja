@@ -2,6 +2,6 @@
 
 public class saveData
 {
-    public int[,] shopContentsData;
     public int xpData;
+    public int[] shopContentsData;
 }
