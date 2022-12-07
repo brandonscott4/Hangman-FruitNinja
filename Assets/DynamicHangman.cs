@@ -9,7 +9,7 @@ public class DynamicHangman : MonoBehaviour
     //public Sprite hangman2, hangman3, hangman4, hangman5, hangman6, hangman7;
     // public Texture2D[] hangmen;
     public Sprite[] HangmanSprites;
-    int n = 0;
+    public int n = 0;
     //private GameObject brgObject;
     public GameManagerScript gameManager;
     private bool isFinished; //checks if the game is finished or not 
@@ -67,11 +67,21 @@ public class DynamicHangman : MonoBehaviour
             }
         }
 
-
-
-
-
     }
+
+    public bool decrementor()
+    {
+        if (!(n == 0))
+        {
+            n--;
+            GetComponent<SpriteRenderer>().sprite = HangmanSprites[n];
+            return true;
+        }
+
+        return false;
+    }
+
+
     // Update is called once per frame
     void Update()
     {

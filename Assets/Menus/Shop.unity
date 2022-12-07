@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5541064843660911901, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_text
-      value: Invincibility
+      value: Extra Life
       objectReference: {fileID: 0}
     - target: {fileID: 5541064843660911901, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_fontSize
@@ -1166,7 +1166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9204512781344763769, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_text
-      value: hangman will not  increase for a set duration(6s)
+      value: The hangman will lose a part, providing you with an exta life.
       objectReference: {fileID: 0}
     - target: {fileID: 9204512781344763769, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_fontSize
