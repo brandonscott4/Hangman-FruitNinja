@@ -14,7 +14,7 @@ public class ShopManager : MonoBehaviour
    
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         Debug.Log("Called Start for shopManager");
         //Debug.Log(shopContents[3, 1]);
