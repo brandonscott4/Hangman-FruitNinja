@@ -17,7 +17,7 @@ public class SoundManagerScript : MonoBehaviour
         //cashRegister = Resources.Load<AudioClip>("cash-register");
         GameWonSound = Resources.Load<AudioClip> ("game won2");
 
-         audioSrc = gameObject.GetComponent<AudioSource>();
+        audioSrc = gameObject.GetComponent<AudioSource>();
 
 
 
