@@ -306,7 +306,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &32098335
 RectTransform:
@@ -583,6 +583,9 @@ MonoBehaviour:
   gameOverUI: {fileID: 558443372}
   Spawner: {fileID: 1109789851}
   gameWonUI: {fileID: 1751084428}
+  invincibilityBtn: {fileID: 358332241}
+  freeLetterBtn: {fileID: 1601845135}
+  extraLifeBtn: {fileID: 633137402}
 --- !u!4 &179761316
 Transform:
   m_ObjectHideFlags: 0
@@ -1343,8 +1346,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -7.5, y: -0.032299995}
-  m_SizeDelta: {x: 22.485098, y: 9.9848}
+  m_AnchoredPosition: {x: -7.5, y: -0.02075}
+  m_SizeDelta: {x: 26.9707, y: 9.9617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558443375
 MonoBehaviour:
@@ -3812,8 +3815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -7.2334747, y: -0.032299995}
-  m_SizeDelta: {x: 27.53305, y: 9.9848}
+  m_AnchoredPosition: {x: -7.5, y: -0.020725}
+  m_SizeDelta: {x: 27.9517, y: 9.9618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751084431
 MonoBehaviour:

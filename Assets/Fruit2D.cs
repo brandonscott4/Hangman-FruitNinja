@@ -102,13 +102,13 @@ public class Fruit2D : MonoBehaviour
 
     private void showCorrectParticles()
     {
-        ParticleSystem particleInstance = Instantiate(correctParticles, transform.position, transform.rotation);
-        Destroy(particleInstance, particleDuration);
+        ParticleSystem correctParticleInstance = Instantiate(correctParticles, transform.position, transform.rotation);
+        Destroy(correctParticleInstance.gameObject, particleDuration);
     }
 
     private void showIncorrectParticles()
     {
-        ParticleSystem particleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);
-        Destroy(particleInstance, particleDuration);
+        ParticleSystem incorrectParticleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);
+        Destroy(incorrectParticleInstance.gameObject, particleDuration);
     }
 }

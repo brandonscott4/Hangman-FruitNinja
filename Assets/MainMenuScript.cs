@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour
 
     void Start()
     {
-        jsonManagerObj = GameObject.Find("jsonManagerObj");
+        //jsonManagerObj = GameObject.Find("jsonManagerObj");
 
         //if shopContents has just been initialised
         if (ShopManager.shopContents[0] == 0)
@@ -32,6 +32,7 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
     public void QuitGame()
     {
         //save game
