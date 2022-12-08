@@ -15,7 +15,7 @@ public class Fruit2D : MonoBehaviour
     private GameObject rngObject;
     private GameObject DynamicHangman;
     private GameObject ninjaPlayer;
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +93,24 @@ public class Fruit2D : MonoBehaviour
         return true;
 
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Box")
 
+        {
+
+            var direction = Random.Range(-10, 400);
+            //This way you can go right and left
+
+            var force = Random.Range(1200, 1200);
+            //This way you can variate the force
+
+            //gameObject.GetComponent<Collider2D>().isTrigger = false;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, force));
+            //gameObject.GetComponent<Collider2D>().isTrigger = true;
+
+        }
+    }
     //can this be in start method?
     public void setLetter(char c)
     {
