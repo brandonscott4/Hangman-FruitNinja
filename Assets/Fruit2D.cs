@@ -56,19 +56,19 @@ public class Fruit2D : MonoBehaviour
             //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
        //     Instantiate(splat, transform.position, transform.rotation);
 
-            bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInRemainingLetters(letter);
+            bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInRemainingLetters(letter);
             Debug.Log(letter + " - " + isCorrect);
             if (isCorrect)
             {
                 SoundManagerScript.PlaySound("swordSlice");
 
-                rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(letter);
+                rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(letter);
                 showCorrectParticles();
                // Experience_Script.xpValue++;
 
 
             }
-            else if (rngObject.GetComponent<RandomWordGeneratorScript>().isLetterInOtherLetters(letter))
+            else if (rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInOtherLetters(letter))
             {
                 SoundManagerScript.PlaySound("sliceLose");
 
@@ -77,7 +77,7 @@ public class Fruit2D : MonoBehaviour
                     DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
                     Experience_Script.xpValue--;
                 }
-                    rngObject.GetComponent<RandomWordGeneratorScript>().handleIncorrectGuess(letter);
+                    rngObject.GetComponent<RandomWordGeneratorScript>().HandleIncorrectGuess(letter);
                     showIncorrectParticles();
 
                 
@@ -112,13 +112,4 @@ public class Fruit2D : MonoBehaviour
         Destroy(incorrectParticleInstance.gameObject, particleDuration);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Box"){
-            //gameObject.GetComponent<Collider2D>().isTrigger = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 20.0f, ForceMode2D.Impulse);
-            //gameObject.GetComponent<Collider2D>().isTrigger = true;
-            Destroy(other.gameObject, 3.0f);
-        }
-    }
 }

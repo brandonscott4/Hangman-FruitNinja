@@ -6,18 +6,17 @@ using UnityEngine;
 public class ButtonInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int ItemID;
-    public TextMeshProUGUI QuantityText;
-    public TextMeshProUGUI NewPriceText;
-    public GameObject ShopManagerObj;
-    //public static int qtyInvincibility = 0;
-    //public static int qtyFreeLetter = 0;
+    public int itemID;
+    public TextMeshProUGUI quantityText;
+    public TextMeshProUGUI newPriceText;
+    private GameObject shopManagerObj;
+
     void Start()
     {
-        ShopManagerObj = GameObject.Find("ShopManager");
+        shopManagerObj = GameObject.Find("ShopManager");
         //this runs everytime the shop is loaded
-        NewPriceText.text = "Price:" + ShopManagerObj.GetComponent<ShopManager>().shopPrices[ItemID].ToString() + " XP";
-        QuantityText.text = "You have:" + ShopManager.shopContents[ItemID].ToString() + " Items";
+        newPriceText.text = "Price:" + shopManagerObj.GetComponent<ShopManager>().shopPrices[itemID].ToString() + " XP";
+        quantityText.text = "You have:" + ShopManager.shopContents[itemID].ToString() + " Items";
     }
 
     // Update is called once per frame

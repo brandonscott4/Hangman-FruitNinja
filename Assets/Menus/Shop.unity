@@ -356,10 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2ce5d4e13d0b40b6ff8e1de88700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 4
-  QuantityText: {fileID: 1584738402}
-  NewPriceText: {fileID: 801549691}
-  ShopManagerObj: {fileID: 0}
+  itemID: 4
+  quantityText: {fileID: 1584738402}
+  newPriceText: {fileID: 801549691}
 --- !u!1 &253096689
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,10 +526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2ce5d4e13d0b40b6ff8e1de88700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 3
-  QuantityText: {fileID: 901270045}
-  NewPriceText: {fileID: 800642816}
-  ShopManagerObj: {fileID: 0}
+  itemID: 3
+  quantityText: {fileID: 901270045}
+  newPriceText: {fileID: 800642816}
 --- !u!1 &323092126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7168269493647127204, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
@@ -548,10 +546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2ce5d4e13d0b40b6ff8e1de88700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 2
-  QuantityText: {fileID: 1264937325}
-  NewPriceText: {fileID: 1359674759}
-  ShopManagerObj: {fileID: 0}
+  itemID: 2
+  quantityText: {fileID: 1264937325}
+  newPriceText: {fileID: 1359674759}
 --- !u!1 &475643006
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchase
+      value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1141,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchase
+      value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1469,7 +1466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchase
+      value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2699,10 +2696,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2ce5d4e13d0b40b6ff8e1de88700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 5
-  QuantityText: {fileID: 186495417}
-  NewPriceText: {fileID: 1326387841}
-  ShopManagerObj: {fileID: 0}
+  itemID: 5
+  quantityText: {fileID: 186495417}
+  newPriceText: {fileID: 1326387841}
 --- !u!1 &1903854045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,10 +2862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2ce5d4e13d0b40b6ff8e1de88700a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 1
-  QuantityText: {fileID: 2143553540}
-  NewPriceText: {fileID: 1997509239}
-  ShopManagerObj: {fileID: 0}
+  itemID: 1
+  quantityText: {fileID: 2143553540}
+  newPriceText: {fileID: 1997509239}
 --- !u!1001 &2036003029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2900,7 +2895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchase
+      value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3411,7 +3406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: purchase
+      value: Purchase
       objectReference: {fileID: 0}
     - target: {fileID: 26971646667546531, guid: f118783432dab6f4eb4bd71ea02e41e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

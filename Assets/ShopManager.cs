@@ -17,30 +17,28 @@ public class ShopManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-      
         experiencePointsScore = GetComponent<TextMeshProUGUI>();
-
-        //could get access to all buttons in start
     }
-    public void purchase()
+
+    public void Purchase()
     {
         //issue finding game object each time could pass btn into function
         GameObject purchaseButton = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         //int var = Random.Range(5, 25); //random number,when you purchase the price will increase like an economy
 
 
-        if (Experience_Script.xpValue >= shopPrices[purchaseButton.GetComponent<ButtonInfo>().ItemID]) //
+        if (Experience_Script.xpValue >= shopPrices[purchaseButton.GetComponent<ButtonInfo>().itemID]) //
         {
             SoundManagerScript.PlaySound("cashRegister");
 
-            int itemId = purchaseButton.GetComponent<ButtonInfo>().ItemID;
+            int itemId = purchaseButton.GetComponent<ButtonInfo>().itemID;
             Experience_Script.xpValue -= shopPrices[itemId]; //calculate new price
 
             //var += shopContents[itemId]; //adds a random number to increase the price by 
             shopContents[itemId]++; //increase the quantity
 
             //purchaseButton.GetComponent<ButtonInfo>().NewPriceText.text = "Price:" + shopPrices[2, itemId].ToString() + " XP"; //new price onscreen
-            purchaseButton.GetComponent<ButtonInfo>().QuantityText.text = "You have:" + shopContents[itemId].ToString() + " Items"; //new quantity onscreen , error appears here when buttoninfo script(QuantityText) is static
+            purchaseButton.GetComponent<ButtonInfo>().quantityText.text = "You have:" + shopContents[itemId].ToString() + " Items"; //new quantity onscreen , error appears here when buttoninfo script(QuantityText) is static
 
 
         }
@@ -53,11 +51,6 @@ public class ShopManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
 
-    }
-    public void Experience()
-    {
-
-        experiencePointsScore.text = "Current Experience points: " + Experience_Script.xpValue;
     }
 
 }

@@ -7,10 +7,10 @@ using System.Linq;
 
 public class RandomWordGeneratorScript : MonoBehaviour
 {
-    private string[] WordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
+    private string[] wordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
     private string randomWord;
-    private List<char> remaining_letters;
-    private List<char> other_letters;
+    private List<char> remainingLetters;
+    private List<char> otherLetters;
     private List<char> guess = new List<char>();
     private List<char> guessProgress;
     private bool isFinished; //checks if the game is finished or not 
@@ -22,48 +22,48 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
     void Awake()
     {
-        randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
-        setGuess();
+        randomWord = wordList[Random.Range(0, wordList.Length)]; //gets a random word from index 0 to numb of strings in the array
+        SetGuess();
         char[] splitRandomWord = randomWord.ToCharArray(0,randomWord.Length); // "hello" to ['h', 'e', 'l', 'l', 'o']
         // letters left to guess, as a List so letters can be removed
-        remaining_letters = splitRandomWord.ToList();
+        remainingLetters = splitRandomWord.ToList();
         guessProgress = splitRandomWord.ToList();
-        other_letters = setOtherLetters();
+        otherLetters = SetOtherLetters();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (remaining_letters.Count == 0 && !isFinished)
+        if (remainingLetters.Count == 0 && !isFinished)
         {
             isFinished = true; //gameover function only called once
             gameManager.GameWon();
         }
     }
 
-    public char getRandomOtherLetter()
+    public char GetRandomOtherLetter()
     {
-        return other_letters[Random.Range(0, other_letters.Count)];
+        return otherLetters[Random.Range(0, otherLetters.Count)];
     }
 
-    public char getRandomRemainingLetter()
+    public char GetRandomRemainingLetter()
     {
-        return remaining_letters[Random.Range(0, remaining_letters.Count)];
+        return remainingLetters[Random.Range(0, remainingLetters.Count)];
     }
 
-    public bool isLetterInRemainingLetters(char c)
+    public bool IsLetterInRemainingLetters(char letter)
     {
-        return remaining_letters.Contains(c);
+        return remainingLetters.Contains(letter);
     }
 
-    public bool isLetterInOtherLetters(char c)
+    public bool IsLetterInOtherLetters(char letter)
     {
-        return other_letters.Contains(c);
+        return otherLetters.Contains(letter);
     }
 
     //sets guess list as all _ initially, run once in start
-    private void setGuess()
+    private void SetGuess()
     {
         for (int i = 0; i < randomWord.Length; i++)
         {
@@ -72,34 +72,32 @@ public class RandomWordGeneratorScript : MonoBehaviour
     }
 
     //sets list that contains all letters that arent in the current word, run once in start
-    public List<char> setOtherLetters()
+    public List<char> SetOtherLetters()
     {
-        List<char> other_letters = new List<char>();
-        for (char c = 'a'; c <= 'z'; c++)
+        List<char> otherLetters = new List<char>();
+        for (char letter = 'a'; letter <= 'z'; letter++)
         {
-            if (!remaining_letters.Contains(c))
-                other_letters.Add(c);
+            if (!remainingLetters.Contains(letter))
+                otherLetters.Add(letter);
         }
 
-        return other_letters;
+        return otherLetters;
 
     }
 
     //update guess progress and remove letter from remaining letters to guess
-    public void handleCorrectGuess(char c)
+    public void HandleCorrectGuess(char letter)
     {
-        int indexOfLetter = guessProgress.IndexOf(c);
-        guess[indexOfLetter] = c;
+        int indexOfLetter = guessProgress.IndexOf(letter);
+        guess[indexOfLetter] = letter;
         guessProgress[indexOfLetter] = '_';
-        remaining_letters.Remove(c);
+        remainingLetters.Remove(letter);
     }
 
     //removes a letter from other letters list
-    public void handleIncorrectGuess(char c)
+    public void HandleIncorrectGuess(char letter)
     {
-        other_letters.Remove(c);
-
-
+        otherLetters.Remove(letter);
     }
 
     

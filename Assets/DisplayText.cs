@@ -17,10 +17,10 @@ public class DisplayText : MonoBehaviour
         rngObject = GameObject.Find("rngWordObject");
         nameText = GetComponent<TextMeshProUGUI>();
 
-        List <char> guess_array = rngObject.GetComponent<RandomWordGeneratorScript>().Guess;
-        char[] guess_charArray = guess_array.ToArray();
-        guess = new string(guess_charArray);
-        nameText.text = string.Join(" ", guess_charArray); //sets the text(onscreen) to the random word
+        List <char> guessArray = rngObject.GetComponent<RandomWordGeneratorScript>().Guess;
+        char[] guessCharArray = guessArray.ToArray();
+        guess = new string(guessCharArray);
+        nameText.text = string.Join(" ", guessCharArray); //sets the text(onscreen) to the random word
 
         //remainingLetters = GetComponent<TextMeshProUGUI>();
         // remainingLetters.text = "You have " + 10 + "remaining letters";
@@ -30,11 +30,11 @@ public class DisplayText : MonoBehaviour
     void Update()
     {
         List<char> currentGuessList = rngObject.GetComponent<RandomWordGeneratorScript>().Guess;
-        char[] currentGuess_charArray = currentGuessList.ToArray();
-        string currentGuess = new string(currentGuess_charArray);
+        char[] currentGuessCharArray = currentGuessList.ToArray();
+        string currentGuess = new string(currentGuessCharArray);
         if (string.Compare(guess, currentGuess) != 0){
             //nameText.text = new string (currentGuessList.ToArray());
-            nameText.text = string.Join(" ", currentGuess_charArray);
+            nameText.text = string.Join(" ", currentGuessCharArray);
         }
     }
 }

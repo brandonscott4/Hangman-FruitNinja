@@ -32,7 +32,7 @@ public class Spawn_items : MonoBehaviour
         yield return new WaitForSeconds(spawnTime);
         //Spawn prefab is apple
         //GameObject prefab = apple;
-        char letter = rngObject.GetComponent<RandomWordGeneratorScript>().getRandomOtherLetter();
+        char letter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomOtherLetter();
         int indexOfLetter = -1;
         for(int i=0; i<letterPrefabs.Length; i++)
         {
@@ -49,7 +49,7 @@ public class Spawn_items : MonoBehaviour
             //Spawn prefab is bomb
             //you code here later in task 4
             //prefab = bomb;
-            letter = rngObject.GetComponent<RandomWordGeneratorScript>().getRandomRemainingLetter();
+            letter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomRemainingLetter();
             for (int i = 0; i < letterPrefabs.Length; i++)
             {
                 if (letterPrefabs[i].name == letter.ToString())

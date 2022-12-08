@@ -27,8 +27,8 @@ public class freeLetterPowerUp : MonoBehaviour
     {
         if(ShopManager.shopContents[2] > 0)
         {
-            char freeLetter = rngObject.GetComponent<RandomWordGeneratorScript>().getRandomRemainingLetter();
-            rngObject.GetComponent<RandomWordGeneratorScript>().handleCorrectGuess(freeLetter);
+            char freeLetter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomRemainingLetter();
+            rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(freeLetter);
             //update the text quanity of this power up
             //call to decrement the shop quantity
             ShopManager.shopContents[2]--;

@@ -668,7 +668,7 @@ SpriteRenderer:
   m_Size: {x: 3.84, y: 3.71}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &245613976
@@ -698,15 +698,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418c96d5ab9a05f4381a93554a71d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hangman1: {fileID: 21300000, guid: c528b217c92967946bf7a73d0a85f760, type: 3}
-  HangmanSprites:
-  - {fileID: 21300000, guid: 460ae870494fe52439af541297d7208f, type: 3}
-  - {fileID: 21300000, guid: 96dcf9e2795be1441aee53b621eb4f7a, type: 3}
-  - {fileID: 21300000, guid: 44d508d0a871ef9499b5be5e785a8215, type: 3}
-  - {fileID: 21300000, guid: 305c983568e592e4ba4587a9f81964b7, type: 3}
-  - {fileID: 21300000, guid: 02ca4df17338870409ad7cad9d847ee4, type: 3}
-  - {fileID: 21300000, guid: dbb04f06ce564e0439bba7505cae1cb9, type: 3}
-  n: 0
+  hangmanSprites:
+  - {fileID: 21300000, guid: cd830921284582b45943da24f7c15090, type: 3}
+  - {fileID: 21300000, guid: 5526cee231bc5ea4cbf52a27b8a0b248, type: 3}
+  - {fileID: 21300000, guid: 46d8d2d8c1f9b9c4f8db79b326a3cf5f, type: 3}
+  - {fileID: 21300000, guid: 3a41f6de62e2788469e2d75f61da8ca7, type: 3}
+  - {fileID: 21300000, guid: b9fcf484058bdf04b805c1c042e8df96, type: 3}
+  - {fileID: 21300000, guid: 66f41c6c77eadc240b0d6ec55ff87203, type: 3}
+  - {fileID: 21300000, guid: b6e89664e62c2bc4687257f9a03abb4d, type: 3}
+  hangmanSpriteIndex: 0
   gameManager: {fileID: 179761315}
 --- !u!1 &358332239
 GameObject:
