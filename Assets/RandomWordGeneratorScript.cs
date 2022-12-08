@@ -8,7 +8,7 @@ using System.Linq;
 public class RandomWordGeneratorScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    private string[] WordList = { "ball", "smile", "triangle" };//less than 7 letters
+    private string[] WordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
     private string randomWord;
     private List<char> remaining_letters;
     private List<char> other_letters;
