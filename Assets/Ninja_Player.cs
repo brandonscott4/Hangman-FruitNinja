@@ -7,7 +7,22 @@ public class Ninja_Player : MonoBehaviour
 
     private Vector3 pos; //Position
     public int score = 0;
-    public bool isInvincible { get; set; } = false;
+    private bool isInvincible = false;
+    
+    //properties
+    public bool IsInvincible 
+    {
+        get
+        {
+            return isInvincible;
+        } 
+
+        set
+        {
+            isInvincible = value;
+        }
+    }
+    
 
 
     // Start is called before the first frame update

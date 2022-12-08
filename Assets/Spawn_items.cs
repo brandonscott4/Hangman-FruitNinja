@@ -63,7 +63,7 @@ public class Spawn_items : MonoBehaviour
         //Spawn prefab add randomc position
         GameObject go = Instantiate(letterPrefab, new Vector3(Random.Range(minX
         , maxX + 1), transform.position.y+14,  0f), Quaternion.Euler(0, 0, Random.Range(-90F, 90F))) as GameObject;
-        go.GetComponent<Fruit2D>().setLetter(letter);
+        go.GetComponent<Fruit2D>().Letter = letter;
 
        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90f);
 

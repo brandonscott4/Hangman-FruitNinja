@@ -25,7 +25,7 @@ public class extraLife : MonoBehaviour
         if (ShopManager.shopContents[3] > 0)
         {
 
-            if (dynamicHangmanObj.GetComponent<DynamicHangman>().decrementor())
+            if (dynamicHangmanObj.GetComponent<DynamicHangman>().Decrementor())
             {
                 //update the text quanity of this power up
                 //call to decrement the shop quantity

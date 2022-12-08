@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
-    public GameObject Spawner;
+    public GameObject spawner;
     public GameObject gameWonUI;
 
     public Button invincibilityBtn;
@@ -24,29 +24,12 @@ public class GameManagerScript : MonoBehaviour
     {
 
     }
+    
     public void GameWon()
     {
-
-
         gameWonUI.SetActive(true);
         SoundManagerScript.PlaySound("game won2");
-        Spawner.SetActive(false);//disables the spawner
-
-        //list of letters still on screen when game has been won
-        GameObject[] letters = GameObject.FindGameObjectsWithTag("Fruit");
-
-        //if there are letters on screen set all their colliders to false
-        if(letters.Length != 0){
-              foreach (GameObject letter in letters)
-            {
-                letter.GetComponent<Collider2D>().enabled = false;
-            }
-        }
-
-        invincibilityBtn.interactable = false;
-        freeLetterBtn.interactable = false;
-        extraLifeBtn.interactable = false;
-
+        HandleEndGame();
         Debug.Log("You Won");
     }
 
@@ -54,7 +37,13 @@ public class GameManagerScript : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         SoundManagerScript.PlaySound("gameOver");
-        Spawner.SetActive(false);//disables the spawner
+        HandleEndGame();
+        Debug.Log("You Lose");
+    }
+    
+    private void HandleEndGame()
+    {
+        spawner.SetActive(false);//disables the spawner
 
         //list of letters still on screen when game is over
         GameObject[] letters = GameObject.FindGameObjectsWithTag("Fruit");
@@ -67,16 +56,17 @@ public class GameManagerScript : MonoBehaviour
             }
         }
        
-
+        //disables powerup buttons
         invincibilityBtn.interactable = false;
         freeLetterBtn.interactable = false;
         extraLifeBtn.interactable = false;
-        Debug.Log("You Lose");
     }
 
-    public void Restart() {
+    public void Restart() 
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //gets the current scene and resets it 
     }
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0); //gets the current scene and resets it 

@@ -13,16 +13,19 @@ public class Fruit2D : MonoBehaviour
     private float particleDuration = 1.0f;
     private char letter;
     private GameObject rngObject;
-    private GameObject DynamicHangman;
+    private GameObject dynamicHangman;
     private GameObject ninjaPlayer;
-   
+
+    //properties
+    public char Letter{ set{letter = value;}}
+
 
     // Start is called before the first frame update
     void Start()
     {
         ninjaPlayer = GameObject.Find("Player");
         rngObject = GameObject.Find("rngWordObject");
-        DynamicHangman = GameObject.Find("hangmanList");
+        dynamicHangman = GameObject.Find("hangmanList");
 
     }
 
@@ -50,6 +53,7 @@ public class Fruit2D : MonoBehaviour
     public bool Hit()
     {
  
+        //dont think we need this now since is also letter
         if(gameObject.tag == "Fruit")
         {
 
@@ -63,7 +67,7 @@ public class Fruit2D : MonoBehaviour
                 SoundManagerScript.PlaySound("swordSlice");
 
                 rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(letter);
-                showCorrectParticles();
+                ShowCorrectParticles();
                // Experience_Script.xpValue++;
 
 
@@ -72,13 +76,13 @@ public class Fruit2D : MonoBehaviour
             {
                 SoundManagerScript.PlaySound("sliceLose");
 
-                if (!ninjaPlayer.GetComponent<Ninja_Player>().isInvincible)
+                if (!ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible)
                 {
-                    DynamicHangman.GetComponent<DynamicHangman>().Incrementor();
+                    dynamicHangman.GetComponent<DynamicHangman>().Incrementor();
                     Experience_Script.xpValue--;
                 }
                     rngObject.GetComponent<RandomWordGeneratorScript>().HandleIncorrectGuess(letter);
-                    showIncorrectParticles();
+                    ShowIncorrectParticles();
 
                 
                 
@@ -111,19 +115,14 @@ public class Fruit2D : MonoBehaviour
 
         }
     }
-    //can this be in start method?
-    public void setLetter(char c)
-    {
-        letter = c;
-    }
 
-    private void showCorrectParticles()
+    private void ShowCorrectParticles()
     {
         ParticleSystem correctParticleInstance = Instantiate(correctParticles, transform.position, transform.rotation);
         Destroy(correctParticleInstance.gameObject, particleDuration);
     }
 
-    private void showIncorrectParticles()
+    private void ShowIncorrectParticles()
     {
         ParticleSystem incorrectParticleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);
         Destroy(incorrectParticleInstance.gameObject, particleDuration);

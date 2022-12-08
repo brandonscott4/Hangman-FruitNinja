@@ -24,14 +24,14 @@ public class invincibilityPowerUp : MonoBehaviour
         quantityText.text = ShopManager.shopContents[1].ToString();
     }
 
-    public void triggerInvincible()
+    public void TriggerInvincible()
     {
-        if (!IsInvoking("resetIsInvincible") && ShopManager.shopContents[1] > 0)
+        if (!IsInvoking("ResetIsInvincible") && ShopManager.shopContents[1] > 0)
         {
 
-            ninjaPlayer.GetComponent<Ninja_Player>().isInvincible = true;
+            ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible = true;
             trailRenderer.startColor = Color.yellow;
-            Invoke("resetIsInvincible", 5.0f);
+            Invoke("ResetIsInvincible", 5.0f);
             //update the text quanity of this power up
             //call to decrement the shop quantity
             ShopManager.shopContents[1]--;
@@ -41,9 +41,9 @@ public class invincibilityPowerUp : MonoBehaviour
         }
     }
 
-    private void resetIsInvincible()
+    private void ResetIsInvincible()
     {
-        ninjaPlayer.GetComponent<Ninja_Player>().isInvincible = false;
+        ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible = false;
         trailRenderer.startColor = Color.white;
     }
 }

@@ -18,16 +18,16 @@ public class DynamicHangman : MonoBehaviour
 
     }
 
-    public void LoadSprites()
-    {
-        object[] loadedSprites = Resources.LoadAll("HangmanSprite", typeof(Sprite));
-        hangmanSprites = new Sprite[loadedSprites.Length];
+    //public void LoadSprites()
+    //{
+    //    object[] loadedSprites = Resources.LoadAll("HangmanSprite", typeof(Sprite));
+    //    hangmanSprites = new Sprite[loadedSprites.Length];
 
-        for (int i = 0; i < loadedSprites.Length; i++)
-        {
-            hangmanSprites[i] = (Sprite)loadedSprites[i];
-        }
-    }
+    //    for (int i = 0; i < loadedSprites.Length; i++)
+    //    {
+    //        hangmanSprites[i] = (Sprite)loadedSprites[i];
+    //    }
+   // }
 
 
     public void Incrementor()
@@ -41,11 +41,9 @@ public class DynamicHangman : MonoBehaviour
             isFinished = true; //gameover function only called once
             gameManager.GameOver();
         }
-        
-
     }
 
-    public bool decrementor()
+    public bool Decrementor()
     {
         if (!(hangmanSpriteIndex == 0))
         {

@@ -21,9 +21,6 @@ public class DisplayText : MonoBehaviour
         char[] guessCharArray = guessArray.ToArray();
         guess = new string(guessCharArray);
         nameText.text = string.Join(" ", guessCharArray); //sets the text(onscreen) to the random word
-
-        //remainingLetters = GetComponent<TextMeshProUGUI>();
-        // remainingLetters.text = "You have " + 10 + "remaining letters";
     }
 
     // Update is called once per frame

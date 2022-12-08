@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 558443372}
-  Spawner: {fileID: 1109789851}
+  spawner: {fileID: 1109789851}
   gameWonUI: {fileID: 1751084428}
   invincibilityBtn: {fileID: 358332241}
   freeLetterBtn: {fileID: 1601845135}
@@ -796,7 +796,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 358332244}
         m_TargetAssemblyTypeName: invincibilityPowerUp, Assembly-CSharp
-        m_MethodName: triggerInvincible
+        m_MethodName: TriggerInvincible
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
