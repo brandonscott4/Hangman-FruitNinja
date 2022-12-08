@@ -37,10 +37,8 @@ public class MainMenuScript : MonoBehaviour
     {
         //save game
         jsonManagerObj.GetComponent<jsonManager>().saveToJSON();
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-            Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+
 
     }
 }

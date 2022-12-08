@@ -17,73 +17,31 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private bool isFinished; //checks if the game is finished or not 
     public GameManagerScript gameManager;
 
-
-    //maybe dont need this as can create an instance in another script
-    //public RandomWordGeneratorScript rngScript;
-    int count =0;
-    //int remain = 0; //remaining letters left
-
-
+    //properties
+     public List<char> Guess{ get{return guess;}}
 
     void Awake()
     {
-
-        // gameObject.AddComponent<Fruit2D>().Hit();
         randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
         setGuess();
-        char[] splitRandomWord = randomWord.ToCharArray(0,randomWord.Length); // ['h', 'e', 'l', 'l', 'o']
+        char[] splitRandomWord = randomWord.ToCharArray(0,randomWord.Length); // "hello" to ['h', 'e', 'l', 'l', 'o']
         // letters left to guess, as a List so letters can be removed
         remaining_letters = splitRandomWord.ToList();
         guessProgress = splitRandomWord.ToList();
 
         other_letters = setOtherLetters();
-        //Sprite sprite1 = Resources.Load("HangmanSprite/hangman1") ;
-
-
-
     }
-    //for (int i = 0; i < letters.Length; i++)
-    //{
-
-
-    //  if (GetComponent<Fruit2D>().Hit())
-    //{
-    //  Debug.Log(letters[i]);
-    //int var = letters.Length - 1;
-    //remainingLetters.text = "You have " + var + "remaining letters";
-    //}
-
-    //}
 
     // Update is called once per frame
     void Update()
     {
-        // remainingLetters.text = "You have " + 10 + "remaining letters";
-        //char[] charArray = randomWord.ToCharArray(); //splits the randomword into a string of letters
-        //for (int i = 0; i < charArray.Length; i++)
-        // {
-        // Debug.Log(charArray[i]);
-        // if (GetComponent<Fruit2D>().Hit()) {
-        //    int var = charArray.Length - 1;
-        //      remainingLetters.text = "You have " + var + "remaining letters";
-        //    }
-        // }
 
-        //string  randomWord = WordList[Random.Range(0, WordList.Length)]; //gets a random word from index 0 to numb of strings in the array
         if (remaining_letters.Count == 0 && !isFinished)
         {
             isFinished = true; //gameover function only called once
             gameManager.GameWon();
-            Debug.Log("hi");
-
-            // if(Input.GetKeyDown(KeyCode.A))
-            //GetComponent<SpriteRenderer>().sprite = hangman1;
-
-            //if (Input.GetKeyDown(KeyCode.D))
-            //  GetComponent<SpriteRenderer>().sprite = hangman7;
-
         }
-            }
+    }
 
     public List<char> getRemainingLetters()
     {
@@ -115,43 +73,6 @@ public class RandomWordGeneratorScript : MonoBehaviour
         return other_letters.Contains(c);
     }
 
-    public string getRandomWord()
-    {
-        return randomWord;
-    }
-
-    public List<char> getGuess()
-    {
-        return guess;
-    }
-
-
-    public void test()
-    
-    {
-        //int remian = remaining_letters[count];
-        //foreach (char c in letters)
-
-
-        //  Debug.Log(c.ToString());
-
-
-
-        if (remaining_letters.Count > count)
-        {
-            // letters.Length--;
-
-            int x = remaining_letters.Count-1;
-            Debug.Log("you selected "+ remaining_letters[count].ToString() +" " +"you have " + x +" "+ " letters remaining ");
-            count++;
-             x--;
-
-            
-        }
-
-
-    }
-
     //sets guess list as all _ initially
     private void setGuess()
     {
@@ -180,20 +101,8 @@ public class RandomWordGeneratorScript : MonoBehaviour
     {
         int indexOfLetter = guessProgress.IndexOf(c);
         guess[indexOfLetter] = c;
-        //Debug.Log(guess[0] + " " + guess[1] + " " + guess[2] + " " + guess[3]);
         guessProgress[indexOfLetter] = '_';
         remaining_letters.Remove(c);
-
-       // GetComponent<SpriteRenderer>().sprite = HangmanSprites[i];
-
-        //check as could be multiple occurences of a letter
-        ///if (!remaining_letters.Contains(c))
-        //{
-        //maybe we dont want to add correct letters to other letters list
-        //    other_letters.Add(c);
-
-        //}
-
     }
 
     public void handleIncorrectGuess(char c)
