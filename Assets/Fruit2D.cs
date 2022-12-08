@@ -111,4 +111,14 @@ public class Fruit2D : MonoBehaviour
         ParticleSystem incorrectParticleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);
         Destroy(incorrectParticleInstance.gameObject, particleDuration);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Box"){
+            //gameObject.GetComponent<Collider2D>().isTrigger = false;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 20.0f, ForceMode2D.Impulse);
+            //gameObject.GetComponent<Collider2D>().isTrigger = true;
+            Destroy(other.gameObject, 3.0f);
+        }
+    }
 }

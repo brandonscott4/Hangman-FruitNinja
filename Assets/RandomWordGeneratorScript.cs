@@ -7,7 +7,6 @@ using System.Linq;
 
 public class RandomWordGeneratorScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     private string[] WordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
     private string randomWord;
     private List<char> remaining_letters;
@@ -18,7 +17,8 @@ public class RandomWordGeneratorScript : MonoBehaviour
     public GameManagerScript gameManager;
 
     //properties
-     public List<char> Guess{ get{return guess;}}
+    public List<char> Guess{ get{return guess;}}
+
 
     void Awake()
     {
@@ -28,7 +28,6 @@ public class RandomWordGeneratorScript : MonoBehaviour
         // letters left to guess, as a List so letters can be removed
         remaining_letters = splitRandomWord.ToList();
         guessProgress = splitRandomWord.ToList();
-
         other_letters = setOtherLetters();
     }
 
@@ -41,16 +40,6 @@ public class RandomWordGeneratorScript : MonoBehaviour
             isFinished = true; //gameover function only called once
             gameManager.GameWon();
         }
-    }
-
-    public List<char> getRemainingLetters()
-    {
-        return remaining_letters;
-    }
-
-    public List<char> getOtherLetters()
-    {
-        return other_letters;
     }
 
     public char getRandomOtherLetter()
@@ -73,7 +62,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         return other_letters.Contains(c);
     }
 
-    //sets guess list as all _ initially
+    //sets guess list as all _ initially, run once in start
     private void setGuess()
     {
         for (int i = 0; i < randomWord.Length; i++)
@@ -82,7 +71,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         }
     }
 
-    //sets list that contains all letters that arent in the current word
+    //sets list that contains all letters that arent in the current word, run once in start
     public List<char> setOtherLetters()
     {
         List<char> other_letters = new List<char>();
@@ -96,7 +85,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
     }
 
-    //adds a letter to other letters list, if that letter is not to be guessed still
+    //update guess progress and remove letter from remaining letters to guess
     public void handleCorrectGuess(char c)
     {
         int indexOfLetter = guessProgress.IndexOf(c);
@@ -105,6 +94,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         remaining_letters.Remove(c);
     }
 
+    //removes a letter from other letters list
     public void handleIncorrectGuess(char c)
     {
         other_letters.Remove(c);

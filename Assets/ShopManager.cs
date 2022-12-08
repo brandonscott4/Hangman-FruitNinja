@@ -11,14 +11,14 @@ public class ShopManager : MonoBehaviour
 
     public static int[] shopContents = new int[6];
     public int[] shopPrices = new int[] {0, 10, 20, 30, 30, 30};
-    public TextMeshProUGUI ExperiencePointsScore;
+    public TextMeshProUGUI experiencePointsScore;
    
 
     // Start is called before the first frame update
     private void Start()
     {
       
-        ExperiencePointsScore = GetComponent<TextMeshProUGUI>();
+        experiencePointsScore = GetComponent<TextMeshProUGUI>();
 
         //could get access to all buttons in start
     }
@@ -57,7 +57,7 @@ public class ShopManager : MonoBehaviour
     public void Experience()
     {
 
-        ExperiencePointsScore.text = "Current Experience points: " + Experience_Script.xpValue;
+        experiencePointsScore.text = "Current Experience points: " + Experience_Script.xpValue;
     }
 
 }

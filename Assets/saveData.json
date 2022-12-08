@@ -1,4 +1,11 @@
 {
-  "xpData": 0,
-  "shopContentsData": [1, 0, 0, 0, 0, 0]
+    "xpData": 3,
+    "shopContentsData": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+    ]
 }
