@@ -4,35 +4,19 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip cashRegister,SwordSlice,GameOverSound,GameWonSound,NoCash, sliceLose;
-    static AudioSource audioSrc;
+    private static AudioClip cashRegister, swordSlice, gameOverSound, gameWonSound, noCash, sliceLose;
+    private static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
         cashRegister = Resources.Load<AudioClip> ("cashRegister");
-        SwordSlice = Resources.Load<AudioClip> ("swordSlice");
-
-        NoCash = Resources.Load<AudioClip> ("nocash");
-        GameOverSound = Resources.Load<AudioClip> ("gameOver");
-        //cashRegister = Resources.Load<AudioClip>("cash-register");
-        GameWonSound = Resources.Load<AudioClip> ("game won2");
+        swordSlice = Resources.Load<AudioClip> ("swordSlice");
+        noCash = Resources.Load<AudioClip> ("nocash");
+        gameOverSound = Resources.Load<AudioClip> ("gameOver");
+        gameWonSound = Resources.Load<AudioClip> ("game won2");
         sliceLose = Resources.Load<AudioClip>("sliceLose");
 
-         audioSrc = gameObject.GetComponent<AudioSource>();
-
-
-
-       // AudioClip cashRegister = Resources.Load("cash-register", typeof(AudioClip)) as AudioClip;
-        // SwordSlice = Resources.Load<AudioClip>("sword-slice");
-        //AudioClip SwordSlice = Resources.Load("sword-slice", typeof(AudioClip)) as AudioClip;
-        //AudioClip Hangmanbeep = Resources.Load("hangmanbeep", typeof(AudioClip)) as AudioClip;
-        //AudioClip GameOverSound = Resources.Load("game-over", typeof(AudioClip)) as AudioClip;
-        //AudioClip GameWonSound = Resources.Load("game won2", typeof(AudioClip)) as AudioClip;
-
-        //  Hangmanbeep = Resources.Load<AudioClip>("hangmanbeep");
-        //  GameOverSound = Resources.Load<AudioClip>("game-over");
-        //cashRegister = Resources.Load<AudioClip>("cash-register");
-//        GameWonSound = Resources.Load<AudioClip>("game won2");
+        audioSrc = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +24,7 @@ public class SoundManagerScript : MonoBehaviour
     {
         
     }
+
     public static void PlaySound(string clip) {
         switch (clip) {
             case "cashRegister":
@@ -47,20 +32,19 @@ public class SoundManagerScript : MonoBehaviour
                 break;
 
             case "swordSlice":
-                audioSrc.PlayOneShot(SwordSlice,1);
+                audioSrc.PlayOneShot(swordSlice,1);
                 break;
 
             case "nocash":
-                audioSrc.PlayOneShot(NoCash,1);
+                audioSrc.PlayOneShot(noCash,1);
                 break;
 
-
             case "gameOver":
-                audioSrc.PlayOneShot(GameOverSound,1);
+                audioSrc.PlayOneShot(gameOverSound,1);
                 break;
 
             case "game won2":
-                audioSrc.PlayOneShot(GameWonSound,1);
+                audioSrc.PlayOneShot(gameWonSound,1);
                 break;
             case "sliceLose":
                 audioSrc.PlayOneShot(sliceLose, 1);

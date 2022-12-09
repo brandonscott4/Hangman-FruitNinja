@@ -12,6 +12,7 @@ public class GameManagerScript : MonoBehaviour
     public Button invincibilityBtn;
     public Button freeLetterBtn;
     public Button extraLifeBtn;
+    public Button trampolineBtn;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,7 @@ public class GameManagerScript : MonoBehaviour
         invincibilityBtn.interactable = false;
         freeLetterBtn.interactable = false;
         extraLifeBtn.interactable = false;
+        trampolineBtn.interactable = false;
     }
 
     public void Restart() 

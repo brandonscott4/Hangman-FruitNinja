@@ -43,5 +43,6 @@ public class TrampolineScript : MonoBehaviour
         
         trampoline.SetActive(false);
     }
+
 }
 

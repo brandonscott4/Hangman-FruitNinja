@@ -587,6 +587,7 @@ MonoBehaviour:
   invincibilityBtn: {fileID: 358332241}
   freeLetterBtn: {fileID: 1601845135}
   extraLifeBtn: {fileID: 633137402}
+  trampolineBtn: {fileID: 724392385}
 --- !u!4 &179761316
 Transform:
   m_ObjectHideFlags: 0
@@ -2591,8 +2592,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.5
-  m_fontSizeBase: 1.5
+  m_fontSize: 1.2
+  m_fontSizeBase: 1.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2627,7 +2628,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.0970757, y: 2.0005388, z: -15.393905, w: 8.327053}
+  m_margin: {x: -0.020028353, y: 2.0005388, z: -15.589073, w: 17.14883}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4031,8 +4032,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746528624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.36, y: -5.19, z: 0}
-  m_LocalScale: {x: 15.501746, y: 1.3562664, z: 1}
+  m_LocalPosition: {x: -3.4847, y: -5.2269, z: 0}
+  m_LocalScale: {x: 15.751325, y: 1.2824855, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

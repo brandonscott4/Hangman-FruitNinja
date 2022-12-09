@@ -100,13 +100,12 @@ public class Fruit2D : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Box")
-
         {
 
-            var direction = Random.Range(-10, 400);
+            int direction = Random.Range(-50, 50);
             //This way you can go right and left
 
-            var force = Random.Range(1200, 1200);
+            int force = Random.Range(1200, 1400);
             //This way you can variate the force
 
             //gameObject.GetComponent<Collider2D>().isTrigger = false;
