@@ -19,6 +19,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
 
     //properties
     public List<char> Guess{ get{return guess;}}
+    public string RandomWord{ get{return randomWord;}}
 
 
     void Awake()

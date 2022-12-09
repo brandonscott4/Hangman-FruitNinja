@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject spawner;
-    public GameObject gameWonUI;
+    public GameObject gameWonUI;    
+
+    public GameObject rngObject;
 
     public Button invincibilityBtn;
     public Button freeLetterBtn;
@@ -36,6 +40,7 @@ public class GameManagerScript : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        gameOverUI.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "Word was: "+ rngObject.GetComponent<RandomWordGeneratorScript>().RandomWord;
         SoundManagerScript.PlaySound("gameOver");
         HandleGameEnd();
     }
