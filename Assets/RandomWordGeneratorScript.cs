@@ -7,7 +7,7 @@ using System.Linq;
 
 public class RandomWordGeneratorScript : MonoBehaviour
 {
-    private string[] wordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
+    private string[] wordList = { "ball", "smile", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "house", "letter", "library", "orange", "rhythm", "trouble", "umbrella", "watch", "cheat", "smell" , "miracle", "plastic"};//less than 9 letters
     private string randomWord;
     private List<char> remainingLetters; //remaining letters in word to be guessed
     private List<char> otherLetters; // letters that arent in word and havent been guessed yet

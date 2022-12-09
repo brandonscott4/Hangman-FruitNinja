@@ -51,17 +51,14 @@ public class Letter2D : MonoBehaviour
 
     public bool Hit()
     {
-
-        //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
-        //Instantiate(splat, transform.position, transform.rotation);
-
+        //checks if this instance of class letter2D is a correct guess
         bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInRemainingLetters(letter);
         if (isCorrect)
         {
             SoundManagerScript.PlaySound("swordSlice");
-
             rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(letter);
             ShowCorrectParticles();
+            //update the xp for a correct guess
             Experience_Script.xpValue+=3;
 
 
@@ -72,8 +69,11 @@ public class Letter2D : MonoBehaviour
 
             if (!ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible)
             {
+                //call the incrementor function to update the hangman state
                 dynamicHangman.GetComponent<DynamicHangman>().Incrementor();
+
                 if(Experience_Script.xpValue > 0){
+                    //update the xp for a incorrect guess
                     Experience_Script.xpValue--;
                 }
                 
@@ -81,13 +81,7 @@ public class Letter2D : MonoBehaviour
 
             rngObject.GetComponent<RandomWordGeneratorScript>().HandleIncorrectGuess(letter);
             ShowIncorrectParticles();
-
-                
-                
-
         }
-
-        //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
         
         Destroy(gameObject);
         return true;
@@ -111,12 +105,14 @@ public class Letter2D : MonoBehaviour
         }
     }
 
+    //instantiates correct particles using prefab and destroys these particles after set duration
     private void ShowCorrectParticles()
     {
         ParticleSystem correctParticleInstance = Instantiate(correctParticles, transform.position, transform.rotation);
         Destroy(correctParticleInstance.gameObject, particleDuration);
     }
 
+    //instantiates incorrect particles using prefab and destroys these particles after set duration
     private void ShowIncorrectParticles()
     {
         ParticleSystem incorrectParticleInstance = Instantiate(incorrectParticles, transform.position, transform.rotation);

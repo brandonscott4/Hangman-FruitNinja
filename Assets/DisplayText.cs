@@ -24,12 +24,7 @@ public class DisplayText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //List<char> currentGuessList = rngObject.GetComponent<RandomWordGeneratorScript>().Guess;
-        //char[] currentGuessCharArray = currentGuessList.ToArray();
-        //string currentGuess = new string(currentGuessCharArray);
-        //if (string.Compare(guess, currentGuess) != 0){
-        //    nameText.text = string.Join(" ", currentGuessCharArray);
-        //}
+
     }
 
     //updates the wordText

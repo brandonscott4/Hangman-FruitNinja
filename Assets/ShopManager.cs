@@ -10,7 +10,7 @@ public class ShopManager : MonoBehaviour
 {
 
     public static int[] shopContents = new int[5];
-    public int[] shopPrices = new int[] {0, 20, 20, 30, 30};
+    public static int[] shopPrices = new int[] {0, 35, 30, 30, 20};
     public TextMeshProUGUI experiencePointsScore;
    
 

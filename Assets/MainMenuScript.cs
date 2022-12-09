@@ -8,9 +8,7 @@ public class MainMenuScript : MonoBehaviour
 
     void Start()
     {
-        //jsonManagerObj = GameObject.Find("jsonManagerObj");
-
-        //if shopContents has just been initialised
+        //run this code if shopContents has just been initialised (as first index would be 0, compared to 1 in the json when loaded in)
         if (ShopManager.shopContents[0] == 0)
         {
             int[] shopArrayJson = jsonManagerObj.GetComponent<jsonManager>().loadFromJSON();
@@ -21,9 +19,11 @@ public class MainMenuScript : MonoBehaviour
             }
         }
     }
+
     public void playGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);//getting the active scene,getting the build index, then adding 1 (going to the next in the list) 
     }
+
     public void HowTo()
     {
       

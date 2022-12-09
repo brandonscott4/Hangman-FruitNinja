@@ -9,7 +9,6 @@ public class Experience_Script : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public static int xpValue= 0;
-    //public GameObject gameOverUI;
 
     void Start()
     {

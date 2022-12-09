@@ -15,7 +15,7 @@ public class ButtonInfo : MonoBehaviour
     {
         shopManagerObj = GameObject.Find("ShopManager");
         //sets power ups price and quantity, when shop is loaded
-        newPriceText.text = "Price:" + shopManagerObj.GetComponent<ShopManager>().shopPrices[itemID].ToString() + " XP";
+        newPriceText.text = "Price:" + ShopManager.shopPrices[itemID].ToString() + " XP";
         quantityText.text = "You have:" + ShopManager.shopContents[itemID].ToString() + " Items";
     }
 
