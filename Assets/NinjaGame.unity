@@ -708,7 +708,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b9fcf484058bdf04b805c1c042e8df96, type: 3}
   - {fileID: 21300000, guid: 66f41c6c77eadc240b0d6ec55ff87203, type: 3}
   - {fileID: 21300000, guid: b6e89664e62c2bc4687257f9a03abb4d, type: 3}
-  hangmanSpriteIndex: 0
   gameManager: {fileID: 179761315}
 --- !u!1 &358332239
 GameObject:
@@ -1038,6 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 179761315}
+  wordText: {fileID: 922697177}
 --- !u!212 &458756553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255b8ea2ef5a523489e9956ee0fa93ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 922697180}
+  wordText: {fileID: 922697180}
 --- !u!1 &932658103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,8 +3061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 1
-  apple: {fileID: 0}
-  bomb: {fileID: 5988038681192090024, guid: 853a7a55f2e008244ae793a7656fa872, type: 3}
   maxX: -10
   minX: 3
 --- !u!4 &1109789853

@@ -30,17 +30,17 @@ public class GameManagerScript : MonoBehaviour
     {
         gameWonUI.SetActive(true);
         SoundManagerScript.PlaySound("game won2");
-        HandleEndGame();
+        HandleGameEnd();
     }
 
     public void GameOver()
     {
         gameOverUI.SetActive(true);
         SoundManagerScript.PlaySound("gameOver");
-        HandleEndGame();
+        HandleGameEnd();
     }
     
-    private void HandleEndGame()
+    private void HandleGameEnd()
     {
         spawner.SetActive(false);//disables the spawner
 
@@ -69,7 +69,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0); //gets the current scene and resets it 
+        SceneManager.LoadScene(0); //loads main menu scene
     }
    
 }

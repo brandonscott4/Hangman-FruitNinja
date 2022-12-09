@@ -6,16 +6,19 @@ using UnityEngine;
 public class DynamicHangman : MonoBehaviour
 {
     public Sprite[] hangmanSprites;
-    public int hangmanSpriteIndex = 0;
+    private int hangmanSpriteIndex = 0;
     public GameManagerScript gameManager;
     private bool isFinished; //checks if the game is finished or not 
 
     // Start is called before the first frame update
     void Start()
     {
+        //sets initial hangman sprite
         GetComponent<SpriteRenderer>().sprite = hangmanSprites[hangmanSpriteIndex];
     }
 
+    //increments the hangman sprite index and displays relevant hangman sprite
+    //checks for game over state
     public void Incrementor()
     {
         hangmanSpriteIndex++;
@@ -29,6 +32,7 @@ public class DynamicHangman : MonoBehaviour
         }
     }
 
+    //decrements the hangman sprite index and displays relevant hangman sprite
     public bool Decrementor()
     {
         if (!(hangmanSpriteIndex == 0))
@@ -45,7 +49,6 @@ public class DynamicHangman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<SpriteRenderer>().sprite = hangman2;
 
     }
 }

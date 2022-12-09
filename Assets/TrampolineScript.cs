@@ -20,26 +20,23 @@ public class TrampolineScript : MonoBehaviour
         quantityText.text = ShopManager.shopContents[4].ToString();
     }
 
+    //triggers the power up trampoline for 3s duration and updates its quantity
     public void triggerTrampoline()
     {
         if (!IsInvoking("ResetIsTrampoline") && ShopManager.shopContents[4] > 0)
         {
-          //  trampoline.GetComponent<Fruit2D>().IsBouncy = true;
-
             trampoline.SetActive(true);
             Invoke("ResetIsTrampoline", 3.0f);
-            //Destroy(trampoline.gameObject, 3.0f);
-
             ShopManager.shopContents[4]--;
-                quantityText.text = ShopManager.shopContents[4].ToString();
-            }
-
+            quantityText.text = ShopManager.shopContents[4].ToString();
         }
+
+    }
+
+    //function called 3s after trampoline power up is activated
+    //resets trampolines active state
     private void ResetIsTrampoline()
-    {
-        //   ninjaPlayer.GetComponent<Ninja_Player>().isInvincible = false;
-  //      trampoline.GetComponent<Fruit2D>().IsBouncy = false;
-        
+    {        
         trampoline.SetActive(false);
     }
 

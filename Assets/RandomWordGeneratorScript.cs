@@ -15,6 +15,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
     private List<char> guessProgress;
     private bool isFinished; //checks if the game is finished or not 
     public GameManagerScript gameManager;
+    public GameObject wordText;
 
     //properties
     public List<char> Guess{ get{return guess;}}
@@ -92,6 +93,7 @@ public class RandomWordGeneratorScript : MonoBehaviour
         guess[indexOfLetter] = letter;
         guessProgress[indexOfLetter] = '_';
         remainingLetters.Remove(letter);
+        wordText.GetComponent<DisplayText>().UpdateWordText();
     }
 
     //removes a letter from other letters list

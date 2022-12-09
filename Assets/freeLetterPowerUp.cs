@@ -11,9 +11,6 @@ public class freeLetterPowerUp : MonoBehaviour
     void Start()
     {
         rngObject = GameObject.Find("rngWordObject");
-        //quantityText = GetComponent<TextMeshProUGUI>();
-        //quantityText.text = ShopManager.shopContents[3, 2].ToString();
-        //call data source to find quantity of power up available
     }
 
     // Update is called once per frame
@@ -22,15 +19,16 @@ public class freeLetterPowerUp : MonoBehaviour
         quantityText.text = ShopManager.shopContents[2].ToString();
     }
 
+    //triggers the power up free letter and updates its quantity
     public void triggerFreeLetter()
     {
         if(ShopManager.shopContents[2] > 0)
         {
             char freeLetter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomRemainingLetter();
             rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(freeLetter);
-            //update the text quanity of this power up
             //call to decrement the shop quantity
             ShopManager.shopContents[2]--;
+            //update the text quanity of this power up
             quantityText.text = ShopManager.shopContents[2].ToString();
         }
 

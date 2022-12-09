@@ -20,6 +20,7 @@ public class extraLife : MonoBehaviour
         quantityText.text = ShopManager.shopContents[3].ToString();
     }
 
+    //triggers the power up extra life and updates its quantity
     public void triggerExtraLife()
     {
         if (ShopManager.shopContents[3] > 0)
