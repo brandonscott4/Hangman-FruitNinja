@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
         //run this code if shopContents has just been initialised (as first index would be 0, compared to 1 in the json when loaded in)
         if (ShopManager.shopContents[0] == 0)
         {
+            //loads the saved shop contents from the json file
             int[] shopArrayJson = jsonManagerObj.GetComponent<jsonManager>().loadFromJSON();
 
             for (int i=0; i<5; i++)

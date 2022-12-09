@@ -25,6 +25,8 @@ public class Spawn_items : MonoBehaviour
     {
         //Wait spawnTime
         yield return new WaitForSeconds(spawnTime);
+
+        //finds index of random letter thats not in the word and hasnt been guessed
         char letter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomOtherLetter();
         int indexOfLetter = -1;
         for(int i=0; i<letterPrefabs.Length; i++)
@@ -33,11 +35,13 @@ public class Spawn_items : MonoBehaviour
                 indexOfLetter = i;
             }
         }
+        //assigns relevant prefab to gameobject to be used in instantiating the letter
         GameObject letterPrefab = letterPrefabs[indexOfLetter];
 
         //If random number is less than 30
         if (Random.Range(0, 100) < 30)
         {
+            //finds index of random letter thats not in the word and hasnt been guessed
             letter = rngObject.GetComponent<RandomWordGeneratorScript>().GetRandomRemainingLetter();
             for (int i = 0; i < letterPrefabs.Length; i++)
             {
@@ -46,6 +50,7 @@ public class Spawn_items : MonoBehaviour
                     indexOfLetter = i;
                 }
             }
+            //assigns relevant prefab to gameobject to be used in instantiating the letter
             letterPrefab = letterPrefabs[indexOfLetter];
         }
 

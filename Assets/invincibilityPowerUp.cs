@@ -14,8 +14,6 @@ public class invincibilityPowerUp : MonoBehaviour
     {
         ninjaPlayer = GameObject.Find("Player");
         trailRenderer = ninjaPlayer.GetComponent<TrailRenderer>();
-        //quantityText = GetComponent<TextMeshProUGUI>();
-        //quantityText.text = ShopManager.shopContents[3, 1].ToString();
     }
 
     // Update is called once per frame

@@ -10,7 +10,7 @@ public class ShopManager : MonoBehaviour
 {
 
     public static int[] shopContents = new int[5];
-    public static int[] shopPrices = new int[] {0, 35, 30, 30, 20};
+    public static int[] shopPrices = new int[] {0, 25, 30, 30, 20};
     public TextMeshProUGUI experiencePointsScore;
    
 
@@ -22,12 +22,10 @@ public class ShopManager : MonoBehaviour
 
     public void Purchase()
     {
-        //issue finding game object each time could pass btn into function
         GameObject purchaseButton = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-        //int var = Random.Range(5, 25); //random number,when you purchase the price will increase like an economy
 
-
-        if (Experience_Script.xpValue >= shopPrices[purchaseButton.GetComponent<ButtonInfo>().itemID]) //
+        //checks if player has enough xp to buy the power up
+        if (Experience_Script.xpValue >= shopPrices[purchaseButton.GetComponent<ButtonInfo>().itemID])
         {
             SoundManagerScript.PlaySound("cashRegister");
 
