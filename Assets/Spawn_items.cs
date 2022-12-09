@@ -1,5 +1,4 @@
 using System.Collections;
-//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +6,6 @@ public class Spawn_items : MonoBehaviour
 {
 
     public float spawnTime = 1; //Spawn Time
-    public GameObject apple; //Apple prefab
-    public GameObject bomb; //Bomb prefab
     public float maxX = -10; //Max x spawn position
     public float minX = 3; //Min x spawn position
     private GameObject rngObject;
