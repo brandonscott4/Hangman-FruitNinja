@@ -26,7 +26,8 @@ public class MainMenuScript : MonoBehaviour
     }
     public void HowTo()
     {
-      
+        SceneManager.LoadScene(3);
+
     }
     public void Shop()
     {

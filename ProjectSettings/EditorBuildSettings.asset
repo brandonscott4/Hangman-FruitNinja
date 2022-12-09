@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NinjaGame.unity
     guid: 81347b5954935ae4e8f46644f982f507
+  - enabled: 1
+    path: Assets/Menus/HowTo.unity
+    guid: 9e4226dd2c6526142879459d169a2cef
   m_configObjects: {}
