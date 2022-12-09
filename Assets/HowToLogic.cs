@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class HowToLogic : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,8 +11,9 @@ public class HowToLogic : MonoBehaviour
     // private GameObject Tuttorial3;
     // private GameObject Tuttorial4;
     private int startNumber = 0;
-    private int EndNumber = 4;
+    private int EndNumber = 3;
     private int number;
+    public GameObject NextBtn;
     void Start()
     {
 
@@ -30,13 +31,19 @@ public class HowToLogic : MonoBehaviour
             number++;
 
             Tutorials[number].SetActive(true);
-           // Debug.Log(number);
+            // Debug.Log(number);
 
+            if (number == 3) {
+                NextBtn.SetActive(false);
+
+            }
         }
         else {
-            number = 0;
-                
-                }
+            NextBtn.SetActive(false);
+
+            Tutorials[number].SetActive(false);
+
+        }
     }
   
 
