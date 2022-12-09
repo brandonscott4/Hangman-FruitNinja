@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
 
-    public static int[] shopContents = new int[6];
-    public int[] shopPrices = new int[] {0, 10, 20, 30, 30, 30};
+    public static int[] shopContents = new int[5];
+    public int[] shopPrices = new int[] {0, 20, 20, 30, 30};
     public TextMeshProUGUI experiencePointsScore;
    
 

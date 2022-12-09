@@ -5,7 +5,6 @@ using TMPro;
 
 public class freeLetterPowerUp : MonoBehaviour
 {
-    private int quantity;
     private GameObject rngObject;
     public TextMeshProUGUI quantityText;
     // Start is called before the first frame update

@@ -35,7 +35,6 @@ public class invincibilityPowerUp : MonoBehaviour
             //update the text quanity of this power up
             //call to decrement the shop quantity
             ShopManager.shopContents[1]--;
-            //Debug.Log(ShopManager.shopContents[3, 1].ToString());
             quantityText.text = ShopManager.shopContents[1].ToString();
 
         }

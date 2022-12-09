@@ -15,7 +15,7 @@ public class MainMenuScript : MonoBehaviour
         {
             int[] shopArrayJson = jsonManagerObj.GetComponent<jsonManager>().loadFromJSON();
 
-            for (int i=0; i<6; i++)
+            for (int i=0; i<5; i++)
             {
                 ShopManager.shopContents[i] = shopArrayJson[i];
             }

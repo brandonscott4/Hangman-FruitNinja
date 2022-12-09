@@ -11,8 +11,7 @@ public class TrampolineScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      //  trampoline = GameObject.Find("Trampoline");
-       // Debug.Log(trampoline);
+        
     }
 
     // Update is called once per frame

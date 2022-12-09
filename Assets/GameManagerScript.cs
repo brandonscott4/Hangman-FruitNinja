@@ -31,7 +31,6 @@ public class GameManagerScript : MonoBehaviour
         gameWonUI.SetActive(true);
         SoundManagerScript.PlaySound("game won2");
         HandleEndGame();
-        Debug.Log("You Won");
     }
 
     public void GameOver()
@@ -39,7 +38,6 @@ public class GameManagerScript : MonoBehaviour
         gameOverUI.SetActive(true);
         SoundManagerScript.PlaySound("gameOver");
         HandleEndGame();
-        Debug.Log("You Lose");
     }
     
     private void HandleEndGame()
@@ -47,7 +45,7 @@ public class GameManagerScript : MonoBehaviour
         spawner.SetActive(false);//disables the spawner
 
         //list of letters still on screen when game is over
-        GameObject[] letters = GameObject.FindGameObjectsWithTag("Fruit");
+        GameObject[] letters = GameObject.FindGameObjectsWithTag("Letter");
 
         //if there are letters on screen set all their colliders to false
         if(letters.Length != 0){

@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fruit2D : MonoBehaviour
+public class Letter2D : MonoBehaviour
 {
 
     private bool canBeDead; //If we can destroy the object
     private Vector3 screen; //Position on the screen
-    public GameObject splat;
     public ParticleSystem correctParticles;
     public ParticleSystem incorrectParticles;
     private float particleDuration = 1.0f;
@@ -52,47 +51,44 @@ public class Fruit2D : MonoBehaviour
 
     public bool Hit()
     {
- 
-        //dont think we need this now since is also letter
-        if(gameObject.tag == "Fruit")
+
+        //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
+        //Instantiate(splat, transform.position, transform.rotation);
+
+        bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInRemainingLetters(letter);
+        if (isCorrect)
         {
+            SoundManagerScript.PlaySound("swordSlice");
 
-            //Experience_Script.xpValue++; //adds to the xp when objects are destroyed
-       //     Instantiate(splat, transform.position, transform.rotation);
-
-            bool isCorrect = rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInRemainingLetters(letter);
-            Debug.Log(letter + " - " + isCorrect);
-            if (isCorrect)
-            {
-                SoundManagerScript.PlaySound("swordSlice");
-
-                rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(letter);
-                ShowCorrectParticles();
-               // Experience_Script.xpValue++;
-
-
-            }
-            else if (rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInOtherLetters(letter))
-            {
-                SoundManagerScript.PlaySound("sliceLose");
-
-                if (!ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible)
-                {
-                    dynamicHangman.GetComponent<DynamicHangman>().Incrementor();
-                    Experience_Script.xpValue--;
-                }
-                    rngObject.GetComponent<RandomWordGeneratorScript>().HandleIncorrectGuess(letter);
-                    ShowIncorrectParticles();
-
-                
-                
-
-            }
-
-            //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
+            rngObject.GetComponent<RandomWordGeneratorScript>().HandleCorrectGuess(letter);
+            ShowCorrectParticles();
+            Experience_Script.xpValue+=3;
 
 
         }
+        else if (rngObject.GetComponent<RandomWordGeneratorScript>().IsLetterInOtherLetters(letter))
+        {
+            SoundManagerScript.PlaySound("sliceLose");
+
+            if (!ninjaPlayer.GetComponent<Ninja_Player>().IsInvincible)
+            {
+                dynamicHangman.GetComponent<DynamicHangman>().Incrementor();
+                if(Experience_Script.xpValue > 0){
+                    Experience_Script.xpValue--;
+                }
+                
+            }
+
+            rngObject.GetComponent<RandomWordGeneratorScript>().HandleIncorrectGuess(letter);
+            ShowIncorrectParticles();
+
+                
+                
+
+        }
+
+        //else check if letter is in other letters if so remove it (we dont want user to guess wrong letter twice)
+        
         Destroy(gameObject);
         return true;
 

@@ -6,7 +6,6 @@ public class Ninja_Player : MonoBehaviour
 {
 
     private Vector3 pos; //Position
-    public int score = 0;
     private bool isInvincible = false;
     
     //properties
@@ -70,28 +69,9 @@ public class Ninja_Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.tag == "Fruit")
+        if (other.tag == "Letter")
         {
-            other.GetComponent<Fruit2D>().Hit();
-            //if (other.tag == "Fruit")
-            //{
-            //    rngScript.test();
-            //
-            //}
-
-        Experience_Script.xpValue++;
-            score++;
-           //Debug.Log(score);
-
-
-        }
-
-        if (other.tag == "Enemy")
-        {
-            other.GetComponent<Fruit2D>().Hit();
-
-            score-=2;
-           // Debug.Log(score);
+            other.GetComponent<Letter2D>().Hit();
         }
 
     }

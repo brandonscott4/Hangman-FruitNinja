@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7166753531015221629}
   m_Layer: 0
   m_Name: m
-  m_TagString: Fruit
+  m_TagString: Letter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,6 @@ MonoBehaviour:
   splat: {fileID: 1290939368609502728, guid: 204194f11c163294cbc25ff384bc1e58, type: 3}
   correctParticles: {fileID: 414593028152376932, guid: dc70774aad2a27c49a479bafc817495e, type: 3}
   incorrectParticles: {fileID: 3017658254304281623, guid: b83e1d20c87448b48a826207108b1fb0, type: 3}
-  particleDuration: 0.5
 --- !u!50 &-6259801347326416688
 Rigidbody2D:
   serializedVersion: 4

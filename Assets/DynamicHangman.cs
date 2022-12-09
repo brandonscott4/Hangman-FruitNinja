@@ -13,22 +13,8 @@ public class DynamicHangman : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //LoadSprites();
         GetComponent<SpriteRenderer>().sprite = hangmanSprites[hangmanSpriteIndex];
-
     }
-
-    //public void LoadSprites()
-    //{
-    //    object[] loadedSprites = Resources.LoadAll("HangmanSprite", typeof(Sprite));
-    //    hangmanSprites = new Sprite[loadedSprites.Length];
-
-    //    for (int i = 0; i < loadedSprites.Length; i++)
-    //    {
-    //        hangmanSprites[i] = (Sprite)loadedSprites[i];
-    //    }
-   // }
-
 
     public void Incrementor()
     {

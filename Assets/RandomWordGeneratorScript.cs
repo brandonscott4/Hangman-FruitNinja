@@ -9,8 +9,8 @@ public class RandomWordGeneratorScript : MonoBehaviour
 {
     private string[] wordList = { "ball", "smile", "triangle", "apple", "yellow", "river", "bucket", "cake", "chalk", "feather", "garden", "house", "language", "letter", "library", "minute", "orange", "plant", "rhythm", "trouble", "umbrella", "watch", "window"};//less than 9 letters
     private string randomWord;
-    private List<char> remainingLetters;
-    private List<char> otherLetters;
+    private List<char> remainingLetters; //remaining letters in word to be guessed
+    private List<char> otherLetters; // letters that arent in word and havent been guessed yet
     private List<char> guess = new List<char>();
     private List<char> guessProgress;
     private bool isFinished; //checks if the game is finished or not 

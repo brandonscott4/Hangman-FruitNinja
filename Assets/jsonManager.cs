@@ -33,7 +33,5 @@ public class jsonManager : MonoBehaviour
         saveData data = JsonUtility.FromJson<saveData>(json);
         Experience_Script.xpValue = data.xpData;
         return data.shopContentsData;
-
-
     }
 }
